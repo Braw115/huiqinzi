@@ -1,0 +1,95 @@
+version: '2'
+
+services:
+  huiqinzi-pg:
+    container_name: ${PG_CONTAINER_NAME}
+    image: ${PG_IMAGE}
+    restart: always
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
+    volumes:
+      - ./data/postgres/data/:/var/lib/postgresql/data/
+      - ./data/postgres/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+        huiqinzi:
+          ipv4_address: ${PG_IPV4}
+
+  huiqinzi-redis:
+    container_name: ${REDIS_CONTAINER_NAME}
+    image: ${REDIS_IMAGE}
+    restart: always
+    volumes:
+      - ./data/redis/data/:/data/
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+        huiqinzi:
+          ipv4_address: ${REDIS_IPV4}
+
+  huiqinzi-minio:
+    container_name: ${MINIO_CONTAINER_NAME}
+    image: ${MINIO_IMAGE}
+    restart: always
+    command: server /export
+    tty: true
+    ports:
+      - 9001:9000
+    environment:
+      MINIO_ACCESS_KEY: ${ACCESS_KEY}
+      MINIO_SECRET_KEY: ${SECRET_KEY}
+    volumes:
+      - ./data/minio/data/:/export/
+      - ./data/minio/config/:/root/.minio/
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+        huiqinzi:
+           ipv4_address: ${MINIO_IPV4}
+
+  huiqinzi-srv:
+    container_name: ${SRV_CONTAINER_NAME}
+    image: ${SRV_IMAGE}
+    restart: always
+    networks:
+        huiqinzi:
+          ipv4_address: ${SRV_IPV4}
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
+
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - huiqinzi-redis
+      - huiqinzi-pg
+    extra_hosts:
+      - ${PG_HOST_MAP}
+      - ${REDIS_HOST_MAP}
+      - ${MINIO_HOST_MAP}
+      - ${CRM_HOST_MAP}
+      - ${SRV_HOST_MAP}
+
+  huiqinzi-crm:
+    container_name: ${CRM_CONTAINER_NAME}
+    image: ${CRM_IMAGE}
+    restart: always
+    networks:
+        huiqinzi:
+          ipv4_address: ${CRM_IPV4}
+    ports:
+      - ${CRM_PORTS_80}
+    extra_hosts:
+      - ${PG_HOST_MAP}
+      - ${REDIS_HOST_MAP}
+      - ${MINIO_HOST_MAP}
+      - ${CRM_HOST_MAP}
+      - ${SRV_HOST_MAP}
+
+networks:
+  huiqinzi:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: ${huiqinzi_SUBNET}

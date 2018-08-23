@@ -1,0 +1,34 @@
+<!--pages/rushBuy/rushBuy.wxml-->
+<import src="../../common/goodsList.wxml" />
+<import src="../../common/typeList.wxml" />
+
+<view class='page'>
+  <!-- <template is="typeList" data="{{types}}" /> -->
+  <scroll-view class="actionTypes types" scroll-x="true" bindscroll="scroll" style="width: 100%" bindscrolltolower="gotoFirstType" bindscroll="typeScroll" scroll-into-view="{{toType}}">
+    <view wx:for="{{subCatogerys}}" id="{{item.uuid}}" class='type  {{activeSubCatogery==item.uuid?"active":""}}' bindtap='choseActionType' wx:key="">
+      {{item.name}}
+      <view wx:if='{{activeSubCatogery==item.uuid}}' class='activeTypeBorder'></view>
+    </view>
+  </scroll-view>
+
+  <!-- <view class='rushServices'>
+    <navigator class='rushService' wx:for="{{rushServices}}" wx:key="" url='{{item.link}}'>
+      <image src='{{item.img}}'></image>
+      <view class='infos'>
+        <view class='title'>{{item.title}}</view>
+        <view class='tags'>{{item.tags}}</view>
+        <view class='priceAndTime'>
+          <view class='rushPrice'>￥{{item.rushPrice}}</view>
+          <view class='originalPrice'>￥{{item.originalPrice}}</view>
+          <view class='time'>
+            <view class='surplusTime'>距结束{{item.surplusTime}}</view>
+            <view class='gotoBuyBtn'>马上抢</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view> -->
+
+  <template is="goodsListHaveBtn" data="{{activities,detailPage}}" />
+ <view wx:if='{{activities.length==0}}' class='emptyList'>商品已被抢空！</view>
+</view>

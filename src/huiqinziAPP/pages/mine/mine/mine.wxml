@@ -1,0 +1,75 @@
+<view class='all'>
+    <view class='detail'>
+      <view class='title-detail'>
+        <view class='todayincome'>
+          <view>
+            <text class='incom'>今日收益（元）</text>
+          </view>
+          <view>
+            <text class='money'>{{todayIncome}}</text>
+          </view>
+        </view>
+        <view class='todayincome'>
+          <view>
+            <text class='incom'>累积收益（元）</text>
+          </view>
+          <view>
+            <text class='money'>{{totalincom}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='btn-withdraw'>
+        <button class='withdraw' url='../../mine/withdraw/withdraw' bindtap='withdraw'>提现</button>
+      </view>
+    </view>
+
+    <view class='list'>
+      <navigator url='' hover-class='navigator-hover' style='background-color:#EEE'>
+        <view class='item'>
+          <text class='item-text'>分销达人</text>
+          <image class='arrow-right'></image>
+        </view>
+      </navigator>
+      <navigator url='../order/order' hover-class='navigator-hover'>
+        <view class='item'>
+          <text class='item-text'>分销订单</text>
+          <image class='arrow-right' src='../../../img/mine/Back8@2x.png'></image>
+        </view>
+      </navigator>
+      <navigator url='' hover-class='navigator-hover' style='border-bottom:25rpx solid #EEE;'>
+        <view class='item' bindtap='customService'>
+          <text class='item-text'>联系客服</text>
+          <image class='arrow-right' src='../../../img/mine/Back8@2x.png'></image>
+        </view>
+      </navigator>
+      <navigator url='../order/order' hover-class='navigator-hover'>
+        <view class='item'>
+          <text class='item-text'>赚钱秘籍</text>
+          <image class='arrow-right' src='../../../img/mine/Back8@2x.png'></image>
+        </view>
+      </navigator>
+    </view> 
+    </view> 
+ 
+
+
+  <view class='bottomBtns' id="bottomBtns">
+  <view class=''>
+  <navigator url='../../mine/minedistribution/minedistribution' style='background-color:#FFF'>
+    <view class='tab' id='sp2@x'>
+      <image src='../../../img/mine/sp2@2x.png'></image>
+      <view class='sp2@2x'>商品</view>
+    </view>
+    </navigator>
+  </view>
+  <view class=''>
+  <navigator url='../../mine/mine/mine' style='background-color:#FFF'>
+    <view class='tab' id='mine'>
+      <image src='../../../img/mine/mine_active.png'></image>
+      <view class='tab_active'>我的</view>
+    </view>
+    </navigator>
+  </view>
+
+</view>
+

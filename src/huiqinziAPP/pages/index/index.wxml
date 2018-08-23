@@ -1,0 +1,128 @@
+<!--index.wxml-->
+<import src="../common/banner.wxml" />
+
+<view class='page'>
+  <view class="header">
+    <!-- <view class='business_logo'>
+      <image wx:if='{{storeLogo}}' src='{{storeLogo}}'></image>
+    </view>
+    <view class='business_name'>{{storeName}}</view> -->
+    <view class='business_menus'>
+      <text bindtap="showAddrs">{{currentAddr}}站</text>
+      <text class="iconfont icon-cc-down" bindtap="showAddrs"></text>
+      <!-- <image class='space' mode='widthFix' src='../../img/home_jiantou.png'></image> -->
+      <view class='addrShow' />
+      <image mode='widthFix' bindtap='gotoSearchPage' src='../../img/home_search.png'></image>
+      <image class='space' mode='widthFix' src='../../img/home_list.png' bindtap='showMineMenus'></image>
+    </view>
+    <view class='business_addrs {{showAddrs?"showAddrs":""}}'>
+      <span wx:for="{{businessAddrs}}" wx:for-index="idx" wx:for-item="item" wx:key="" bindtap="chooseAddr" data-addr="{{item}}">
+        <view wx:if="{{idx%3==1}}" class=' {{currentAddr==item?"active":""}} center'> {{item}}站 </view>
+        <view wx:else class=' {{currentAddr==item?"active":""}} '> {{item}}站 </view>
+      </span>
+    </view>
+  </view>
+
+  <template is="banner" data="{{banners}}" />
+
+  <view class='typeentrances'>
+    <navigator wx:for="{{catogerys}}" wx:key="" url='../typeEntrance/{{catogeryEntrances[item.key]}}/{{catogeryEntrances[item.key]}}?uuid={{item.uuid}}' class='typeentrance'>
+      <image mode='widthFix' src='{{imageUrl+item.pic}}' class='typeimg'></image>
+      <view class='typename'>{{item.name}}</view>
+    </navigator>
+  </view>
+
+  <view class='graySeparate'></view>
+  <view class='bestSellers'>
+    <!-- <image mode='aspectFill' class='title' src='../../img/bestSellers.png'></image> -->
+    <view wx:if='{{hotSells.length==0}}' class='emptyList'>暂无最新热卖活动或商品！</view>
+    <view wx:if='{{hotSells.length>0}}' class='bestSellerTitle'>
+      <text class='title'>最新热卖</text>
+      <navigator class='' url='../typeEntrance/hotSell/hotSell'>更多</navigator>
+    </view>
+    <navigator class='bestSeller' wx:for="{{hotSells}}"  data-idx='{{index}}' wx:key="" 
+    url='../goodsDetail/groupBuy/groupBuy?goodsuuid={{item.uuid}}'>
+    <!-- ../goodsDetail/groupBuy/groupBuy?goodsuuid={{item.uuid}} -->
+      <image mode="widthFix" src='{{imageUrl+item.img}}' />
+      <!-- //widthFix aspectFill aspectFit -->
+      <view class='title'>{{item.city?"["+item.city+"]":""}} {{item.title}}</view>
+      <view class='sell'>
+        <label class='priceC'>￥</label>
+        <label class='price'>{{item.price}}</label>
+        <label class='specialprice'>￥{{item.specialprice}}</label>
+        <label class='selled'>已售:{{item.sold}}</label>
+      </view>
+    </navigator>
+
+  </view>
+  <view class='mineMenus' wx:if="{{showMineMenus}}">
+    <view class='empty' bindtap='showMineMenus'></view>
+    <view class='menus'>
+      <navigator class='menu' wx:for="{{mineMenus}}" wx:if="{{index<3}}" url="../mine/{{item.img}}/{{item.img}}" wx:key="" bindtap="{{item.link}}">
+        <image mode='aspectFit' src='../../img/mine/{{item.img}}.png'></image>
+        <view>{{item.name}}</view>
+      </navigator>
+      <view class='menu' wx:for="{{mineMenus}}" wx:if="{{index>2}}" wx:key="" data-codeType="{{item.img}}" bindtap="{{item.link}}">
+        <image src='../../img/mine/{{item.img}}.png'></image>
+        <view>{{item.name}}</view>
+      </view>
+      <view class='menu'>
+        <button data-name="shareBtn" open-type="share" plain="true">
+          <image src='../../img/mine/share.png'></image>
+          <view>分享</view>
+        </button>
+      </view>
+      <view class='menu' bindtap='cancel'>
+          <image></image>
+          <view>填写邀请码</view>
+       </view>
+      <view class='cancleBtn' bindtap='showMineMenus'>取消</view>
+    </view>
+  </view>
+  <!--二维码-->
+  <view class='mineMenus qrCode' wx:if="{{showQrCode}}">
+    <view class='code'>
+      <image mode="aspectFit" src="{{imagePath}}"></image>
+    </view>
+    <view class="canvas-box">
+      <canvas hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#fff;" canvas-id="mycanvas" />
+    </view>
+    <view class='cancleBtn' bindtap='hideQrCode'>
+      <!-- <view>取消</view>  -->
+      取消
+    </view>
+  </view>
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">未授权告示</view>
+    <view class="modal-content">
+      如需正常使用该小程序，需要获取您的用户个人信息，是否确定授权？
+    </view>
+    <view class="modal-footer">
+      <!-- <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view> -->
+      <!-- <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view> -->
+      <button class="btn-cancel" bindtap="onCancel">取消</button>
+      <button bindgetuserinfo='getUserInfo' bindtap="onConfim" class="btn-confirm" open-type="getUserInfo">确定</button>
+    </view>
+  </view>
+
+  <!--通知-->
+  <view class='modal-backdrop' hidden='{{!cancel}}'>
+    <view class='modal-container greet'>
+      <view class='modalheader'>
+        <view class='header-title'>填写邀请码</view>
+      </view>
+      <view class='method'>
+        <view class='writecode'>
+          <input type='number' bindinput='code' />
+        </view>
+        <view class='btn-submit'>
+          <button bindtap='submitcode'>确定</button>
+          <button bindtap='cancel'>取消</button>
+        </view>
+      </view>
+    </view>
+  </view>
+<view wx:for='{{arr}}' wx:key="index" wx:item='aa'>{{item}}</view>
+</view>

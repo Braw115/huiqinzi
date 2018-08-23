@@ -1,0 +1,33 @@
+/* pages/mineDetail/logisticsInfo/logisticsInfo.wxss */
+page{
+  font-size: 10pt;
+}
+.header,.body{
+  padding: 20rpx;
+}
+.time{
+  color: #666666;
+}
+.logistic{
+  margin-left: 10pt;
+  padding-left: 10pt;
+  border-left: 1px solid #EEEEEE;
+  padding-bottom: 20pt;
+}
+.logistic:last-of-type{
+  border-left: none;
+}
+.logistic .info{
+  position: relative;
+}
+.logistic .info label{
+  position: absolute;
+  display: inline-block;
+  width: 10pt;
+  height: 10pt;
+  border-radius: 50%;
+  background-color: #CBCBCB;
+  left: -20pt;
+  top: 10%;
+  border: 5pt solid #fff;
+}

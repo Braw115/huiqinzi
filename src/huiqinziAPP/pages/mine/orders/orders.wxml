@@ -1,0 +1,27 @@
+<!--pages/mine/orders/orders.wxml-->
+<import src="../../common/typeList.wxml" />
+
+ <template is="typeList" data="{{types,activeType}}" /> 
+<view class='graySeparate'></view>
+<!-- <view class='page'> -->
+  <view wx:if='{{orders.length==0}}' class='emptyList'>暂无该类型订单！</view>
+  <view class='orders'>
+    <view wx:for="{{orders}}" data-state='{{item.state}}' data-uuid='{{item.uuid}}' data-idx="{{index}}" data-bindtap='orderDetail' class='orderItem' wx:key="">
+      <image class='img' mode="aspectFit''" src='{{item.act.pics[0]?imageUrl+item.act.pics[0]:imgDef}}'></image>
+      <view class='orderInfos'>
+        <text class='orderStatus '>{{status[item.state]}}</text>
+        <view class='title'> {{item.act.city?"["+item.act.city+"]":""}}{{item.act.title}}</view>
+        <view class='num'>数量:{{item.amount}}</view>
+        <view wx:if='{{item.code}}' class='num'>消费码:{{item.code}}</view>
+        <view wx:if='{{item.total_fee}}' class='price'>价格:￥{{item.total_fee}}</view>
+        <view class='operations'>
+          <view wx:if="{{item.state=='wait-pay'}}" data-uuid='{{item.uuid}}' bindtap='gotoPay'>去支付</view>
+          <view wx:if="{{item.state=='shipped'}}" data-uuid='{{item.uuid}}' bindtap='gotoLogisticsInfo'>查看物流</view>
+          <view wx:if="{{item.state=='wait-use'}}" data-idx="{{index}}" data-uuid='{{item.uuid}}' bindtap='gotoUse'>去使用</view>
+          <view data-idx="{{index}}" data-uuid='{{item.uuid}}' bindtap='deleteOrder'>删除</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<!-- </view> -->

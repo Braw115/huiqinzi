@@ -1,0 +1,11 @@
+<!--pages/mineDetail/getCashHistory/getCashHistory.wxml-->
+<view class='history' wx:for="{{histories}}" wx:key="">
+  <view class='flexBox'>
+    <view class='tag'>提现金额</view>
+    <view class='content'>{{item.state}}</view>
+  </view>
+  <view class='flexBox'>
+    <view class='tag'>{{item.created}}</view>
+    <view class='content money'>{{item.amount}}元</view>
+  </view>
+</view>

@@ -1,0 +1,389 @@
+.control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+#account {
+    color: #9e272a;
+    font-size: 1.3em;
+}
+
+.nav>li>a:hover,
+.nav>li>a:active,
+.nav>li>a:focus {
+    color: #fff;
+    background: transparent;
+}
+
+table.dataTable,
+table.table-bordered.dataTable {
+    border-collapse: collapse !important;
+}
+
+.grey {
+    background-color: #c0c0c0;
+}
+
+.grey2 {
+    background-color: #fff;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
+    content: '' !important;
+}
+
+.tbl-opr {
+    min-width: 82px;
+}
+
+.tbl-opr4 {
+    min-width: 110px;
+}
+
+.upload {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #1E90FF;
+    padding: 4px 12px;
+    color: #1E90FF !important;
+}
+
+.delete-btn {
+    background-color: #fff;
+    border: 1px solid #c55555;
+    color: #c55555;
+    padding: 4px 12px;
+}
+
+.delete-btn:hover {
+    color: #c55555;
+}
+
+.upload input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+    height: 100%;
+}
+
+.table-img {
+    cursor: pointer;
+    max-height: 80px;
+}
+
+.addon {
+    padding: 0 15px !important;
+    float: left !important;
+}
+
+.addon .input-group-addon {
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-color: #cccccc;
+}
+
+header ul.nav a {
+    background: rgba(0, 0, 0, 0.1);
+    /* padding: 0 20px; */
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 20px;
+}
+
+
+/* 权限控制菜单显示 */
+
+.sidebar-menu {
+    display: none;
+}
+
+
+/*统计详情页面*/
+
+#statistics .box-header span {
+    color: #555;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#statistics .box-header span+span {
+    border-left: 1px solid #ddd;
+    padding-left: 10px;
+}
+
+#statistics .box-header .warning:empty {
+    display: none;
+}
+
+#statistics #heartChart,
+#statistics #stepsChart {
+    width: 100%;
+    height: 350px
+}
+
+#statistics #stepsStartT,
+#statistics #stepsEndT {
+    width: 85px;
+}
+
+#statistics .trackChart h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px 0;
+}
+
+#statistics .trackChart h4+p {
+    color: #949494;
+    margin-bottom: 5px;
+    height: 0
+}
+
+#statistics table {
+    margin-bottom: 0;
+}
+
+#statistics table th.time.col-xs-4 {
+    text-indent: -1.5em;
+}
+
+#statistics table th.delay.col-xs-3 {
+    text-indent: -0.5em;
+}
+
+#statistics .tableContainer {
+    height: 284px;
+    overflow-y: auto;
+    border: 1px solid #d0d0d0
+}
+
+
+/*统计详情页面 结束*/
+
+header ul.nav a.js-logout {
+    font-size: 30px;
+    padding: 0 20px;
+    color: #fff;
+    line-height: 50px;
+}
+
+.js-logout :hover {
+    color: #000;
+}
+
+header ul.nav a.change-pwd {
+    font-size: 20px;
+    padding: 0px 20px;
+    line-height: 50px;
+    color: #fff;
+}
+
+header ul.nav a.change-pwd:hover {
+    color: #000;
+}
+
+
+/*dataTables列表单元背景色 结束*/
+
+
+/* 系统配置参数 */
+
+ul.nav.nav-tabs li a {
+    color: #555;
+}
+
+ul.nav.nav-tabs:hover li a {
+    color: #333;
+}
+
+div.tab-content.config {
+    margin-top: 50px;
+}
+
+
+/**系统配置参数 结束 */
+
+.loading-container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+}
+
+.loading-gif {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.pre-text {
+    font-size: 18px
+}
+
+.btn-null {
+    color: #f5f5f5;
+    background-color: #cccccc;
+}
+
+.cabinetModal {
+    position: relative;
+    padding: 20px 60px 20px 0;
+    text-align: center;
+    min-height: 150px;
+}
+
+.cabinetTable {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.cabinetTable td {
+    height: 30px;
+    width: 30px;
+}
+
+.cell-available {
+    background: #1cc156;
+}
+
+.cell-pending {
+    background: #fffe00;
+}
+
+.cell-damaged {
+    background: #ff2a00;
+}
+
+.cell-tip {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+
+.cell-tip>div {
+    text-align: left;
+}
+
+.cell-tip span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    position: relative;
+    top: 8px;
+    margin: 4px;
+}
+
+.cell-tip label {
+    margin: 0;
+}
+
+.img-item {
+    width: 130px;
+}
+
+#preview-container {
+    position: absolute;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 1031;
+}
+
+#preview-container img,
+#preview-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+#jumptopage {
+    display: inline-block;
+    vertical-align: top;
+    margin: 2px 0;
+    white-space: nowrap;
+    padding-left: 10px;
+}
+
+#jumptopage input {
+    width: 50px;
+    padding: 6px 12px;
+}
+
+.image-wrapper-middle .image {
+    position: relative;
+    font-size: 50px;
+    color: #ccc;
+    margin: 15% 32%;
+}
+.uploadBtn {
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 24%;
+    overflow: hidden;
+    text-align: center;
+    width: auto;
+    background-color: #2c7;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.middlepic {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    background-color: #fff;
+    transform: translate(-300px, 0px) scale(4);
+    height: 40px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.cover-middle {
+    position: relative;
+    width: 160px;
+    height: 120px;
+    margin-top: -98px;
+    background-size: 100% 100%;
+}
+
+.trash-icon-middle {
+    position: relative;
+    display: block;
+    width: 160px;
+    height: 120px;
+    margin-top: -120px;
+}
+
+.trash-icon-middle .fa-trash-o {
+    font-size: 50px;
+    position: relative;
+    color: white;
+    margin-left: 38%;
+    margin-top: 20%;
+}

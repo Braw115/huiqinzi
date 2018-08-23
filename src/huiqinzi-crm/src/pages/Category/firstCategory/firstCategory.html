@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="pages/Category/firstCategory/firstCategory.css">
+<link rel="stylesheet" href="pages/goodsManagement/editGoods.css">
+
+<div class="box container-fluid box-header-line">
+    <div class="box-header"
+         style="padding-bottom: 20px; padding-top: 30px; border-bottom: 2px solid #ebebeb; margin-bottom: 20px;">
+        <span style="font-size:24px">一级分类</span>
+        <button class="btn btn-primary pull-right bankadmin subadmin clerk businessmen" onclick="openAdd()">新增分类
+        </button>
+    </div>
+    <table id="tableLi" class="table table-bordered table-style" width="100%">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>分类</th>
+            <th>图标</th>
+            <th>修改</th>
+        </tr>
+        </thead>
+        <tbody class="ul-add">
+
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">分类编辑 </h4>
+            </div>
+            <div class="modal-body ">
+                <form id="form1" class="form-horizontal">
+                    <div class="form-group ">
+                        <label for="type" class="col-md-3 col-sm-3 control-label">分类选择</label>
+                        <div class="col-md-6 col-sm-6">
+                            <!-- <input type="text" id="name" class="form-control editTitle" placeholder="请输入分类名称"> -->
+                            <select class="form-control " id='key'>
+                                <option value="rushBuy" >疯抢</option>
+                                <option value="groupBuy">精选团购</option>
+                                <option value="paradise">乐园</option>
+                                <option value="earlyTeach">早教</option>
+                                <option value="takePhoto">摄影</option>
+                                <option value="shopping">购物</option>
+                                <option value="education">教育</option>
+                                <option value="parentingTourism">亲子游</option>
+                                <option value="parentingRestaurant">亲子餐厅</option>
+                                <option value="outDoor">户外</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label class="col-md-3 col-sm-3 control-label">分类名称</label>
+                        <div class="col-md-6 col-sm-6">
+                             <input type="text" id="name" class="form-control" verify="" placeholder="请输入分类名称">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="position" class="col-md-3 col-sm-3 control-label">分类下标</label>
+                        <div class="col-md-6 col-sm-6">
+                            <select class="form-control " name="" id="position">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="  clearfix">
+                        <label class="col-md-3 col-sm-3 control-label">请上传分类图标</label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <!-- <button type="button" class="btn btn-default" id="fileUploadContent">上传图片</button> -->
+                            <div><span class=""
+                                       style="color: lightgray;margin-top: 15px">jpg/png格式,尺寸160*120，图片大小不能超过2M</span>
+                            </div>
+                            <div class="image-wrapper-middle">
+                                <i class="image fa fa-picture-o"></i> <span class="uploadBtn">上传图片
+                            <input type="file" id="pic" onchange="uploadImage(this)" name="middlepic" accept="image/*"
+                                   class="middlepic" data-type="thressimg" data-index="0">
+                        </span>
+                                <div class="cover-middle" style="display: none"></div>
+                                <span class="trash-icon-middle" onclick="deleteImage(this)" style="display: none"
+                                      data-type="thressimg" data-index="0">
+                            <i class="fa fa-trash-o fa-lg" style="opacity: 1"></i>
+                        </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="saveUser()">确定</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>

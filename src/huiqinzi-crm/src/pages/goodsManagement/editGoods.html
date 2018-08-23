@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="pages/goodsManagement/editGoods.css">
+<div class="box container-fluid box-header-line">
+    <div class="box-header" style="padding-bottom: 20px; padding-top: 30px; border-bottom: 2px solid #ebebeb; margin-bottom: 20px;">
+        <span style="font-size:24px">商品编辑</span>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="gotoGoodsList()">&times;</button>
+    </div>
+    <form id="form1" class="form-horizontal">
+        <div class="form-group ">
+            <label class="col-md-3 col-sm-3 control-label">一级分类</label>
+            <div class="col-md-6 col-sm-6">
+                <select class="form-control " name="category" id="category" onchange="choseCatogery" verify="required">
+                </select>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="col-md-3 col-sm-3 control-label">二级分类</label>
+            <div class="col-md-6 col-sm-6">
+                <select class="form-control " name="subcategory" id="subcategory" verify="required">
+                </select>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="col-md-3 col-sm-3 control-label">商品简介</label>
+            <div class="col-md-6 col-sm-6">
+                <input type="text" id="title" class="form-control " verify="required" placeholder="请输入商品简介">
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="col-md-3 col-sm-3 control-label">城市</label>
+            <div class="col-md-6 col-sm-6">
+                <input type="text" id="city" class="form-control " verify="required" placeholder="请输入城市">
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="col-md-3 col-sm-3 control-label">排行位置</label>
+            <div class="col-md-3 col-sm-3">
+                <input type="text" id="position" class="form-control " verify="num" placeholder="排行位置">
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <input type="text" id="hotposition" class="form-control " verify="num" placeholder="最新热卖排行位置">
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="col-md-3 col-sm-3 control-label">价格</label>
+            <div class="col-md-3 col-sm-3">
+                <input type="text" id="price" class="form-control " verify="price" placeholder="价格">
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <input type="text" id="specialprice" class="form-control " verify="price" placeholder="特价">
+            </div>
+        </div>
+        <div class="form-group num">
+            <label class="col-md-3 col-sm-3 control-label">库存</label>
+            <div class="col-md-3 col-sm-3">
+                <input type="number" class="form-control " id="inventory" verify="num" placeholder="请输入库存数量">
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <input type="number" class="form-control " id="sold" verify="num" placeholder="请输入已售数量">
+            </div>
+        </div>
+        <div class="form-group ">
+            <label class="col-md-3 col-sm-3 control-label">规格</label>
+            <div class="col-md-6 col-sm-6">
+                <select class="form-control " name="pricetag" id="pricetag" verify="required">
+                </select>
+            </div>
+        </div>
+        <div class="form-group num">
+            <label class="col-md-3 col-sm-3 control-label">规格-属性、属性值</label>
+            <div class="col-md-3 col-sm-3">
+                <input type="text" id="norm-name" class="form-control" verify="" placeholder="规格-属性">
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <input type="text" id="norm-type" class="form-control" verify="" placeholder="规格-属性值">
+            </div>
+        </div>
+        <div class="form-group num">
+            <label class="col-md-3 col-sm-3 control-label">规格-价格、库存</label>
+            <div class="col-md-2 col-sm-2">
+                <input type="text" id="norm-realprice" class="form-control " verify="" placeholder="规格-价格">
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <input type="text" id="norm-price" class="form-control " verify="" placeholder="规格-内部结算价">
+            </div>
+            <div class="col-md-2 col-sm-2">
+                <input type="text" id="norm-stock" class="form-control " verify="" placeholder="规格-库存">
+            </div>
+            <div class="col-md-3 col-sm-3 ">
+                <button class="btn btn-primary " type="button" onclick="saveNorms()">保存规格</button>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="dtp_input1" class="col-md-3 col-sm-3  control-label">活动起始时间: </label>
+            <div style="padding-left: 15px" class="input-group date form_datetime col-md-4 col-sm-4" data-link-field="dtp_input4">
+                <input class="form-control" id="opentime" size="16" type="text" value="" readonly>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </span>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </span>
+            </div>
+            <input type="hidden" id="dtp_input3" value="" />
+            <br/>
+        </div>
+        <div class="form-group ">
+            <label for="dtp_input1" class="col-md-3 col-sm-3 control-label">活动结束时间: </label>
+            <div style="padding-left: 15px" class="input-group date form_datetime  col-md-4 col-sm-4" data-link-field="dtp_input3">
+                <input class="form-control" id="closetime" size="16" type="text" value="" readonly>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </span>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </span>
+            </div>
+            <input type="hidden" id="dtp_input4" value="" />
+            <br/>
+        </div>
+        <div class="form-group">
+            <label for="dtp_input1" class="col-md-3 col-sm-3 control-label">商品图片: </label>
+            <div class="col-md-8 col-sm-8">
+                <div class="imageTitle">
+                    <span class="" style="color: lightgray;margin-top: 15px">jpg/png格式,尺寸160*120，图片大小不能超过2M</span>
+                </div>
+                <div class="image-wrapper-middle ">
+                    <i class="image fa fa-picture-o" aria-hidden="true"></i>
+                    <span class="uploadBtn">上传图片
+                        <input type="file" onchange="uploadImg(this)" name="middlepic" accept="image/*" class="middlepic" data-type="three" data-index="0">
+                    </span>
+                    <div class="cover-middle" style="display: none"></div>
+                    <span class="trash-icon-middle " onclick="deleteImage(this)" style="display: none" data-type="three" data-index="0">
+                        <i class="fa fa-trash-o fa-lg" style="opacity: 1"></i>
+                    </span>
+                </div>
+                <div class="image-wrapper-middle ">
+                    <i class="image fa fa-picture-o" aria-hidden="true"></i>
+                    <span class="uploadBtn">上传图片
+                        <input type="file" onchange="uploadImg(this)" name="middlepic" accept="image/*" class="middlepic" data-type="three" data-index="1">
+                    </span>
+                    <div class="cover-middle col-md-4 col-sm-4" style="display: none"></div>
+                    <span class="trash-icon-middle" onclick="deleteImage(this)" style="display: none" data-type="three" data-index="1">
+                        <i class="fa fa-trash-o fa-lg" style="opacity: 1"></i>
+                    </span>
+                </div>
+                <div class="image-wrapper-middle ">
+                    <i class="image fa fa-picture-o" aria-hidden="true"></i>
+                    <span class="uploadBtn">上传图片
+                        <input type="file" onchange="uploadImg(this)" name="middlepic" accept="image/*" class="middlepic" data-type="three" data-index="2">
+                    </span>
+                    <div class="cover-middle" style="display: none"></div>
+                    <span class="trash-icon-middle" onclick="deleteImage(this)" style="display: none" data-type="three" data-index="2">
+                        <i class="fa fa-trash-o fa-lg" style="opacity: 1"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group goodsDetailArea">
+            <textarea name="name" rows="8" cols="80" id="goodsDetail"></textarea>
+        </div>
+    </form>
+    <div class="saveGoods clearfix">
+        <button class="btn btn-primary pull-right bankadmin subadmin clerk businessmen" type="button" onclick="saveGoods()">保存商品</button>
+    </div>
+
+</div>

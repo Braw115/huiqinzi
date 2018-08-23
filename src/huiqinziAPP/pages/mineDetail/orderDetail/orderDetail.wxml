@@ -1,0 +1,38 @@
+<!--pages/mineDetail/orderDetail/orderDetail.wxml-->
+<view class='status {{status}}'>{{statuses[status]}}</view>
+
+<view class='detail top'>
+  <view class='title'>{{order.act.title}}</view>
+  <view wx:if='{{order.goods}}' class='norms'>{{order.goods[0].name +'/'+ order.goods[0].type}}</view>
+  <view wx:if="{{order.ext.start}}" class='time '>
+    <view class='begin'>入住:{{order.ext.start||'未填写'}}</view>
+    <view class='end'>离店:{{order.ext.end||'未填写'}}</view>
+  </view>
+</view>
+<view class='graySeparate'></view>
+<view class='detail '>
+  <view class='info '>
+    <view class='tag'>订单总价</view>
+    <view class='price'>{{order.total_fee}}元</view>
+  </view>
+  <view class='info '>
+    <view class='tag'>验证码</view>
+    <view class='verifyCode'>{{order.code||'暂无验证码'}}</view>
+  </view>
+  <view class='info '>
+    <view class='tag'>购买数量</view>
+    <view class='num'>{{order.amount}}</view>
+  </view>
+  <view class='info '>
+    <view class='tag'>订单编号</view>
+    <view class='identifier'>{{order.uuid}}</view>
+  </view>
+  <view class='info '>
+    <view class='tag'>下单时间</view>
+    <view class='orderTime'>{{order.created}}</view>
+  </view>
+  <view class='info '>
+    <view class='tag'>支付方式</view>
+    <view class='payWay'>微信支付</view>
+  </view>
+</view>

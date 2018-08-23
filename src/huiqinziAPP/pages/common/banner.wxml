@@ -1,0 +1,26 @@
+<wxs module="bannerOption">
+  module.exports = {
+    duration: 100,
+    interval: 2000,
+    imageUrl: 'https://huiqinzi.aefcm.com/huiqinzi/image/'
+  }
+</wxs>
+<!--autoplay="false" interval="{{bannerOption.interval}}"  -->
+<template name="banner">
+  <swiper circular="true" indicator-dots="true"  indicator-active-color="#FFF" autoplay="true" interval="{{bannerOption.interval}}" duration="{{bannerOption.duration}}">
+    <swiper-item wx:if='{{banners}}' wx:for="{{banners}}" wx:key="">
+      <view class='bannerItem' bindtap='gotoActDetail' data-goodsuuid='{{item.gooduuid}}' data-category='{{item.category}}'>
+        <!-- mode='aspectFill'  autoplay="false" interval="{{bannerOption.interval}}" -->
+        <image mode='widthFix'src="{{bannerOption.imageUrl+(item.pic?item.pic:item)}}" class="slide-image" />
+        <view wx:if='{{item.synopsis}}' class='bannerInfo'>
+          <view class='bannerText'>
+            {{item.synopsis}}
+          </view>
+          <view class='bannerPrice'>
+            ￥{{item.price}}
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</template>

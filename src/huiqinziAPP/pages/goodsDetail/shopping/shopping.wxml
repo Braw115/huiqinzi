@@ -1,0 +1,52 @@
+<!--pages/goodsDetail/shopping/shopping.wxml-->
+<!-- <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="loadContent">
+  <view class='scrollItem'> -->
+  <import src="../../../lib/wxParse/wxParse.wxml" />
+
+<view class='goodsDetailImg'>
+  <image mode='aspectFit' src='{{imageUrl+goods.pics[0]}}'></image>
+</view>
+<view class='graySeparate'></view>
+
+<view class='infos'>
+  <view class='title'>{{goods.title}}</view>
+  <view class='info'>{{goods.info}}</view>
+  <view class='price'>￥{{goods.price}}</view>
+  <view class='bottom EMC'>
+    <view class='express'>快递:{{goods.express||"0.00"}}</view>
+    <view class='monthSales'>月销:{{goods.sold}}</view>
+    <view class='city'>{{goods.city}}</view>
+  </view>
+</view>
+<view class='graySeparate'></view>
+
+<view class='infos norms'>
+  <view class='title'>规格</view>
+  <view class=' allNorms'>
+    <text wx:for="{{pricetag}}"  class='{{item.checked?"active":""}} norm' wx:key=""  data-idx='{{index}}' bindtap='choseNorm' >{{item.name+"/"+item.type+"/￥"+item.price+"/库存"+item.stock}}</text>
+  </view>
+  <view class='bottom'>
+    <view class='title'>数量</view>
+    <view class='num'>
+      <text class="iconfont icon-reduce" id='reduce' bindtap='choseBuyNum'></text>
+      <text class="buyNum">{{buyNum}}</text>
+      <text class="iconfont icon-add" id='add' bindtap='choseBuyNum'></text>
+    </view>
+  </view>
+</view>
+
+<view class='bottomBtns'>
+  <view class='Recommend' bindtap='gotoBuy'>
+  立即购买
+  <!-- <navigator url='{{goodsBuyUrl}}?uuid={{goods.uuid}}&buyNum={{buyNum}}&norm={{choseNorm}}' bin>立即购买</navigator>  -->
+  </view>
+</view>
+<!-- <view class='loadContent' wx:if="{{!showDetail}}">
+  <text class="iconfont icon-up"></text> 上拉查看图文详情
+</view> -->
+<view class="wxParse"  >
+  <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}" />
+</view>
+<!-- </view>
+  
+</scroll-view> -->

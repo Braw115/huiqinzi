@@ -1,0 +1,43 @@
+
+
+
+
+  <!--pages/mine/withdraw/withdraw.wxml-->
+<view class='page getCash' >
+  <view class='title flexBox '>
+    <view class='content canWithdraw'>
+      可提现金额:
+      <text class='money'>￥{{balance}}</text>
+    </view>
+    <view class=' getCashHistory'>
+      <navigator class='gotoWithdrawHistory' url='../../mineDetail/getCashHistory/getCashHistory' class=''>提现记录</navigator>
+    </view>
+  </view>
+    <view class='getCashSetting'>
+    <view class='setting'>
+      <view class=' flexBox'>
+        <view class='tag'>
+          提现金额(￥)
+        </view>
+        <view class='content '>
+          <input type='number' focus id='amount' placeholder='请填写提现金额' bindinput='listenInput'></input>
+        </view>
+      </view>
+      <view class='discribe flexBox'>
+        <view class='tag'>
+          备注信息
+        </view>
+        <view class='content '>
+          <!-- <input placeholder=''></input> -->
+          <textarea id='remark' value='' placeholder='请填写需要提现的信息(如账户等)' bindinput='listenInput'></textarea>
+        </view>
+      </view>
+      </view>
+    </view>
+
+  <view class='title flexBox tips'>
+    <view class='tag ' style='font-weight:500'>提示:</view>
+    <view class='content'> 提现操是人工操作，管理人员收到申请将金额提现到你提供的账户中，没填写<text>默认是微信钱包</text></view>
+  </view>
+  <view class='infos' id='submitGetCash' bindtap='submitGetCash'>提交</view>
+</view>

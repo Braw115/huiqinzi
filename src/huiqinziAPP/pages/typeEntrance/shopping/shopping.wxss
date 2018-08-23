@@ -1,0 +1,93 @@
+/* pages/shopping/shopping.wxss */
+@import "../../../lib/style/font.wxss";
+
+.page {
+  padding: 0 20rpx;
+}
+
+.type {
+  width: auto;
+  padding: 0 20rpx;
+  height: 65rpx;
+  line-height: 50rpx;
+  font-weight: 800;
+}
+
+.type:not(:first-child) {
+  margin-left: 30rpx;
+}
+
+.header .addr, .header .searchArea {
+  display: inline-block;
+  padding: 20rpx 0;
+}
+
+.header .addr {
+  width: 100px;
+  text-align: center;
+  color: #999;
+  vertical-align: top;
+  line-height: 30px;
+}
+
+.header .addresses {
+  top: 95rpx;
+}
+
+.header .searchArea {
+  width: calc(100% - 100px);
+}
+
+.searchInput {
+  border: 1px solid #e6e6ea;
+  position: relative;
+  border-radius: 15px;
+  padding-left: 85rpx;
+  height: 30px;
+  line-height: 100%;
+}
+
+.searchInput text {
+  position: absolute;
+  left: 30rpx;
+  top: 20rpx;
+}
+
+.goodsListSP .hasmargin {
+  margin-left: 20rpx;
+}
+
+.goodsListSP_item {
+  display: inline-block;
+  width: calc(50% - 55rpx);
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.16);
+  text-align: center;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 5rpx;
+}
+
+.goodsListSP_item .goodsName {
+  font-weight: 900;
+  color: #333;
+  overflow: hidden;
+  text-overflow: "......";
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.goodsListSP_item .goodsInfo {
+  font-size: 10pt;
+  padding: 20rpx 0;
+}
+
+.goodsListSP_item .price {
+  color: #ff4747;
+  font-weight: 800;
+}
+
+image.goodsImg {
+  height: calc(44vw - 61rpx);
+  width: 100%;
+}

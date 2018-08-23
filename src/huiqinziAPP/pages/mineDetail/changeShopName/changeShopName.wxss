@@ -1,0 +1,18 @@
+/* pages/mineDetail/changeShopName/changeShopName.wxss */
+@import "../../../lib/style/font-left.wxss";
+page{
+  background-color: #F4F4F4;
+  padding: 20rpx;
+  font-size: 10pt;
+}
+
+.flexBox{
+  line-height: 30pt;
+  background-color: #fff;
+}
+.flexBox .tag{
+  flex: 9;
+}
+.flexBox input{
+  padding: 0 20rpx;
+}

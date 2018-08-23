@@ -1,0 +1,39 @@
+/* pages/search/searchResult/searchResult.wxss */
+@import "../../../lib/style/font.wxss";
+.page{
+  padding: 0 20rpx;
+}
+.header{
+  padding: 15rpx 0;
+}
+.header>view {
+  display: inline-block;
+}
+
+.searchInput {
+  border: 1px solid #e6e6ea;
+  position: relative;
+  border-radius: 4px;
+  padding-left: 85rpx;
+  font-size: 13pt;
+  line-height: 28pt;
+  height: 28pt;
+}
+
+.searchInput text {
+  position: absolute;
+  left: 30rpx;
+  top: 18rpx;
+}
+
+.header .search {
+  width: 100%;
+  position: relative;
+}
+
+.header .search image {
+  width: 13pt;
+  position: absolute;
+  top: 8pt;
+  left: 13pt;
+}

@@ -1,0 +1,196 @@
+/* pages/goodsBuy/goods/goods.wxss */
+@import "../../../lib/style/font.wxss";
+
+.page {
+  padding: 0;
+}
+
+page {
+  background-color: #f4f4f4;
+  padding-top: 20rpx;
+}
+
+.recieveAddr {
+  display: flex;
+  flex-direction: row;
+}
+
+.recieveAddr>view:not(.goto) {
+  flex: 15;
+}
+
+.recieveAddr>view.goto {
+  flex: 1;
+}
+
+.recieveAddr .hasAddr .addr>view {
+  display: inline-block;
+  color: #333;
+  padding: 10rpx 0;
+}
+
+.recieveAddr .hasAddr .addr>view:nth-child(1) {
+  width: 35%;
+}
+
+.recieveAddr .hasAddr .addr>view:nth-child(2) {
+  width: 65%;
+}
+
+.recieveAddr .goto image {
+  width: 10pt;
+  height: 100%;
+}
+
+.noAddr image {
+  height: 30pt;
+  width: 30pt;
+  vertical-align: middle;
+}
+
+.noAddr text {
+  display: inline-block;
+  padding-left: 30rpx;
+  color: #333;
+}
+
+.hasPadding {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+image.express {
+  height: 10rpx;
+  display: block;
+  width: 100%;
+}
+
+.totals .price text {
+  display: inline-block;
+  color: #333;
+  padding: 10rpx 0;
+}
+
+.totals .price text:nth-child(2) {
+  width: 20%;
+  float: right;
+}
+
+.infos {
+  display: flex;
+  flex-direction: row;
+}
+
+.infos .img {
+  flex: 2;
+}
+
+.infos .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.infos .info {
+  flex: 5;
+  padding-left: 30rpx;
+}
+
+.infos .info view {
+  padding: 10rpx 0;
+}
+
+.infos .info .price {
+  color: #999;
+}
+
+.infos .info .title {
+  color: #333;
+  font-weight: 600;
+}
+
+.payWay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.payWay image {
+  flex: 1;
+  height: 30pt;
+  width: 30pt;
+}
+
+.payWay label {
+  flex: 4;
+}
+
+.payWay label:nth-of-type(1) {
+  padding-left: 30rpx;
+}
+
+.payWay label:nth-of-type(2) {
+  text-align: right;
+}
+
+.payWay .active {
+  color: #ff4747;
+}
+
+.payWay .active:before {
+  content: "\e604";
+}
+
+.bottomBtns .realPay {
+  flex: 3;
+  text-align: left;
+  padding-left: 20rpx;
+  color: #dc4040;
+}
+
+.bottomBtns .gotoPay {
+  flex: 1;
+}
+
+
+.opNum .buyNum {
+  display: inline-block;
+  width: 40pt;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.opNum>label {
+  display: inline-block;
+  width: 50%;
+  line-height: 20pt;
+}
+
+.opNum .num {
+  text-align: right;
+}
+
+.totals .opNum .num text {
+  vertical-align: middle;
+  padding: 0;
+}
+
+.opNum>label>label {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+}
+
+.opNum .num .font {
+  display: inline-block;
+  padding: 0 10rpx;
+  height:1.6rem;
+}
+
+.opNum .num .font:nth-of-type(1) {
+  border-right: 1px solid #ccc;
+}
+
+.opNum .num .font:nth-of-type(2) {
+  border-left: 1px solid #ccc;
+  color: #FF4747;
+}

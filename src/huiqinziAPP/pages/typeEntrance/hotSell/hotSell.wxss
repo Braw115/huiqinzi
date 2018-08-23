@@ -1,0 +1,67 @@
+/* pages/typeEntrance/hotSell/hotSell.wxss */
+
+.bestSellers {
+  text-align: center;
+  padding: 20rpx;
+}
+.bestSellers .bestSeller{
+  width: 100%;
+  /* border-bottom: 1pt solid #ddd; */
+  padding: 20rpx 0;
+}
+
+.bestSellers .bestSellerTitle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  color: #999;
+  padding: 15rpx;
+}
+
+.bestSellers image.title {
+  width: 60%;
+  height: 18px;
+}
+
+.bestSeller  image {
+  width: 100%;
+  height: 150px;
+}
+
+.bestSeller .title {
+  text-align: left;
+  padding-top: 10rpx ;
+  font-size: 12pt;
+  color: #333;
+  line-height:15pt;
+}
+
+.bestSeller .sell {
+  text-align: left;
+}
+
+.bestSeller .sell .priceC {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #ff4747;
+}
+
+.bestSeller .sell .price {
+  color: #ff4747;
+  font-size: 14pt;
+  font-weight: 800;
+}
+
+.bestSeller .sell .selled {
+  padding-left: 20rpx;
+  color: #999;
+  font-size: 10pt;
+}
+
+.bestSeller .sell .specialprice {
+  padding: 0 20rpx;
+  color: #999;
+  font-size: 10pt;
+  text-decoration: line-through;
+}

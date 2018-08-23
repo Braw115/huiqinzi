@@ -1,0 +1,452 @@
+@import "../../lib/style/font.wxss";
+
+.emptyheader {
+  height: 85rpx;
+}
+
+.page {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 85rpx;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 0 20rpx;
+  width: 100%;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.business_logo image {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+
+.business_log {
+  flex: 1;
+}
+
+.business_name {
+  flex: 5;
+  padding-left: 10rpx;
+}
+
+.business_menus {
+  width: 100%;
+  height: 85rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #999;
+}
+
+.business_menus image {
+  width: 40rpx;
+}
+
+.business_menus image.space {
+  margin-left: 20rpx;
+}
+
+.business_menus .addrShow {
+  flex: 1;
+}
+
+.business_menus .search {
+  padding: 0 30rpx;
+  display: inline;
+}
+
+.business_addrs {
+  padding: 10rpx 20rpx;
+  position: absolute;
+  top: 85rpx;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  z-index: 99;
+  width: 100%;
+}
+
+.showAddrs {
+  display: block;
+}
+
+.business_addrs view {
+  display: inline-block;
+  width: 24%;
+  line-height: 70rpx;
+  text-align: center;
+  border: 2rpx solid #dcdcdc;
+  border-radius: 10rpx;
+  color: #999;
+}
+
+.business_addrs view.center {
+  margin: 10rpx 13%;
+}
+
+.business_addrs view.active {
+  background-color: #ff4747;
+  color: #fff;
+}
+
+.bannerInfo {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.bannerText {
+  color: #fff;
+  flex: 1;
+  padding: 1pt 0;
+  line-height: 14pt;
+  word-wrap: break-all;
+  word-break: normal;
+}
+
+.bannerPrice {
+  padding-left: 50rpx;
+  color: #ff4747;
+  line-height: 28pt;
+}
+
+.typeentrances {
+  padding-bottom: 20rpx;
+}
+
+.typeentrance {
+  display: inline-block;
+  width: 20%;
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.typeentrance .typeimg {
+  width: 40pt;
+  height: 40pt;
+  border-radius: 50%;
+}
+
+.typeentrance .typename {
+  text-align: center;
+  font-size: 10pt;
+  color: #333;
+}
+
+.bestSellers {
+  text-align: center;
+  padding: 0 20rpx 20rpx;
+}
+
+.bestSellers .bestSeller {
+  width: 100%;
+  /* border-bottom: 1pt solid #ddd; */
+  padding: 20rpx 0;
+}
+
+.bestSellers .bestSellerTitle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  color: #999;
+  padding: 20rpx 15rpx 0;
+}
+
+.bestSellers image.title {
+  width: 60%;
+  height: 18px;
+}
+
+.bestSeller  image {
+  width: 100%;
+  /* height: 150px; */
+}
+
+.bestSeller .title {
+  text-align: left;
+  padding-top: 10rpx;
+  font-size: 12pt;
+  color: #333;
+  line-height: 15pt;
+}
+
+.bestSeller .sell {
+  text-align: left;
+}
+
+.bestSeller .sell .priceC {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #ff4747;
+}
+
+.bestSeller .sell .price {
+  color: #ff4747;
+  font-size: 14pt;
+  font-weight: 800;
+}
+
+.bestSeller .sell .selled {
+  padding-left: 20rpx;
+  color: #999;
+  font-size: 10pt;
+}
+
+.bestSeller .sell .specialprice {
+  padding: 0 20rpx;
+  color: #999;
+  font-size: 10pt;
+  text-decoration: line-through;
+}
+
+.mineMenus {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.mineMenus .empty {
+  flex: 5;
+  background: #000;
+  opacity: 0.5;
+}
+
+.mineMenus .menus {
+  background-color: #fff;
+  flex: 3;
+}
+
+.mineMenus .menu {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  padding-top: 60rpx;
+}
+.mineMenus .menu image {
+  width: 20pt;
+  height: 20pt;
+}
+
+.mineMenus .menu view {
+  padding-top: 20rpx;
+}
+
+.mineMenus .cancleBtn {
+  padding: 40rpx;
+  text-align: center;
+}
+
+.qrCode {
+  justify-content: center;
+}
+
+.qrCode .code {
+  flex: 9;
+  background-color: #808080;
+  text-align: center;
+}
+
+.qrCode .code image {
+  width: 90%;
+  height: 100%;
+}
+
+.qrCode .cancleBtn {
+  flex: 1;
+  background-color: #ff4747;
+  color: #fff;
+  line-height: 3;
+  font-size: 15pt;
+}
+
+.canvas-box {
+  position: absolute;
+  top: 999999rpx;
+  left: 0;
+}
+
+button[plain] {
+  border: 0;
+  font-size: 10pt;
+  line-height: 10pt;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}
+
+.input {
+  width: 100%;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+}
+
+.modal-footer button::after {
+  border: none;
+}
+
+.modal-footer button {
+  border-radius: 0;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: green;
+  text-align: center;
+}
+.modal-backdrop {
+  background: RGBA(137, 137, 137, 0.87);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.modal-container {
+  align-items: center;
+  background: #fff;
+  margin: 200rpx 33rpx 0;
+  border-radius: 10rpx;
+  flex-wrap: wrap;
+  height: 500rpx;
+}
+
+.modalheader .header-title
+{
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  font-weight: bold;
+
+}
+.modal-container .method
+{
+  margin-top: 40rpx;
+
+}
+.method .writecode{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+
+}
+.writecode input{
+  width: 70%;
+  height: 100%;
+  border: 1rpx solid #ff4747;
+  border-radius: 70rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+} 
+.method .btn-submit{
+width: 100%;
+height: 100rpx;
+margin-top: 80rpx;
+display: flex;
+}
+.btn-submit button{
+  width: 25%;
+  height: 100rpx;
+  background-color: #ff4747;
+  color: #fff;
+  font-size: 36rpx;
+
+}
+.quxiao{
+  position: fixed;
+  bottom: 200rpx;
+  left: 330rpx;
+}
+.quxiao image{
+  width: 90rpx;
+  height: 90rpx;
+}

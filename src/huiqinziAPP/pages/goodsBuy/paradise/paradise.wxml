@@ -1,0 +1,55 @@
+<!--pages/goodsBuy/paradise/paradise.wxml-->
+<view class='hasPadding'>
+  <view class='header flexBox'>
+    <view class='img'>
+      <image wx:if='{{currentGoods}}' src='{{imageUrl+currentGoods.pics[0]}}'></image>
+    </view>
+    <view class='title'>{{currentGoods.city?"["+currentGoods.city+"]":""}}{{currentGoods.title}}</view>
+  </view>
+  <view class='norm'>￥{{currentGoods.groupbyprice||currentGoods.price}}</view>
+  <view class='opNum '>
+    <label>数量:{{amount}}</label>
+    <label class='num'>
+      <label>
+        <label class='font' bindtap='reduceNum'>
+          <text class='iconfont icon-reduce'></text>
+        </label>
+        <input id='amount' class='buyNum' value='{{amount}}' type='number' bindinput="listenInput"></input>
+        <label class='font' bindtap='addNum'>
+          <text class='iconfont icon-add'></text>
+        </label>
+      </label>
+    </label>
+  </view>
+</view>
+<view class='graySeparate'></view>
+<view class='hasPadding orderInfos'>
+  <view class='orderInfo flexBox'>
+    <view class='tag'>
+      姓名
+    </view>
+    <view class='content'>
+      <input id='name' placeholder='请输入姓名' bindinput="listenInput" value=''></input>
+    </view>
+  </view>
+   <view class='orderInfo flexBox'>
+    <view class='tag'>
+      手机号
+    </view>
+    <view class='content'>
+      <input id='phone' placeholder='请输入手机号' bindinput="listenInput" value=''></input>
+    </view>
+  </view>
+   <view class='orderInfo flexBox'>
+    <view class='tag'>
+      备注
+    </view>
+    <view class='content'>
+      <input id='remark' placeholder='请输入备注' bindinput="listenInput" value=''></input>
+    </view>
+  </view>
+</view>
+<view class='bottomBtns'>
+  <view class='totalCash'>￥{{totalCash}}</view>
+  <view class='gotoPay Recommend' bindtap='gotoPay'>微信支付</view>
+</view>

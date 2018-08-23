@@ -1,0 +1,18 @@
+<template name="goodsTitle">
+  <view class='goodsTitle'>
+    <view class='title'>[{{currentGoods.city}}]{{currentGoods.title}}</view>
+    <view class='sell'>
+    <text class='priceC'>￥</text>
+      <text class='price'>{{currentGoods.groupbyprice||currentGoods.price}}</text>
+      <text class='specialprice'>￥{{currentGoods.specialprice}}</text>
+      <text class='selled'>已售:{{currentGoods.sold}}</text>
+      <view wx:if='{{leftTime}}' class='goodsLeftTime'>
+        距结束仅剩
+        <span class='leftTime'>{{leftTime.days}}</span> 天
+        <span class='leftTime'>{{leftTime.hours}}</span> :
+        <span class='leftTime'>{{leftTime.minutes}}</span> :
+        <span class='leftTime'>{{leftTime.seconds}}</span>
+      </view>
+    </view>
+  </view>
+</template>

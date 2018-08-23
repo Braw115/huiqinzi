@@ -1,0 +1,17 @@
+<!--pages/mineDetail/logisticsInfo/logisticsInfo.wxml-->
+<view class='header'>
+  <view>订单单号：{{logisticsInfo.logisticscode}}</view>
+  <view>承运: {{traceCompany}}</view>
+</view>
+<view class='graySeparate'></view>
+<view class='body'>
+ <view wx:if='{{!logisticsInfo.traces}}' class='emptyList'>暂无物流详细信息！</view>
+  <view class='logistic' wx:for="{{logisticsInfo.traces}}" wx:key="">
+    <label></label>
+    <view class='info'>
+      <label></label>
+      {{item.AcceptStation}}
+      </view>
+    <view class='time'>{{item.AcceptTime}}</view>
+  </view>
+</view>

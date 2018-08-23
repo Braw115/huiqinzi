@@ -1,0 +1,83 @@
+<!--pages/goodsDeatil/groupBuy/groupBuy.wxml-->
+<import src="../../common/banner.wxml" />
+<import src="../../common/goodsDetailTitle.wxml" />
+<import src="../../common/service.wxml" />
+<import src="../../../lib/wxParse/wxParse.wxml" />
+
+<template wx:if='{{banners}}' is="banner" data="{{banners}}" />
+<view class='page'>
+  <template is="goodsTitle" data="{{currentGoods,leftTime}}" />
+  <view wx:if='{{pricetag.length>0}}' class='graySeparate' />
+  <view wx:if='{{pricetag.length>0}}' class='norms'>
+    <view class='title'>商品规格</view>
+    <view class='allNorms'>
+      <view wx:for="{{pricetag}}" data-idx='{{index}}' bindtap='choseNorm' wx:key="" class='{{item.checked?"active":""}} norm '>{{item.name+"/"+item.type+"/￥"+item.groupprice+"/库存"+item.stock}}</view>
+    </view>
+  </view>
+  <!-- <view wx:if='{{groups.length==0}}' class='title'>快来开团吧！</view> -->
+  <view wx:if='{{groups.length>0}}' class='graySeparate'> </view>
+  
+  <view wx:if='{{groups.length>0}}' class='groups'>
+    <view class='title'>{{groups.length}}人在团购</view>
+    <view  class='group' wx:for="{{groups}}" wx:key="" bindtap='gotoBuy' data-group='{{item.uuid}}' >
+      <image src='{{item.pic}}'></image>
+      <text class='surplusNum'>还差{{currentGoods.amount - item.useruuids.length}}人</text>
+      <label class='gotoBuy'>去参团</label>
+    </view>
+  </view>
+   <view  wx:if="{{currentGoods.reservation}}" class='graySeparate' /> 
+   <view class='calendar' wx:if="{{currentGoods.reservation}}">
+    <view class='calendarHeader flexBox'>
+      <view class='preMonth'>
+        <label bindtap='preMonth'>
+          <text class='iconfont icon-left'></text>上月
+        </label>
+      </view>
+      <view class='nowMonth'>{{year}}年{{month}}月</view>
+      <view class='nextMonth'>
+        <label bindtap='nextMonth'>下月
+          <text class='iconfont icon-right'></text>
+        </label>
+      </view>
+    </view>
+    <view class='calendarWeek flexBox'>
+      <view class='week' wx:for="{{weeks}}" wx:key="">{{item}}</view>
+    </view>
+    <view class='calendarDates'>
+      <view wx:for="{{datesArr}}" class='flexBox' wx:key="">
+        <view wx:for="{{item}}" wx:for-item="itemDate" wx:for-index="itemIdx" wx:key="">
+          <text data-date='{{itemDate}}' class='{{startDate==itemDate?"startDate":""}} {{endDate==itemDate?"endDate":""}} date' bindtap='choseDate'>{{itemDate}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='graySeparate' /> 
+  </view>
+  <view class='graySeparate'> </view>
+  <view class='goodsDeatil'>
+    <view class='title'>商品详情</view>
+    <view class='content'>
+      <view class="wxParse">
+        <template is="wxParse" data="{{wxParseData:activityDetail.nodes}}" />
+      </view>
+    </view>
+  </view>
+
+  <view class='bottomBtns'>
+    <view class='customerService' bindtap='showService'>
+      <image class='serviceImg' src='../../../img/service.png'></image>
+    </view>
+    <view class='signalBuy '>
+      <view bindtap='gotoBuy' data-group='notGroup' >
+        <view class='price'>￥{{currentGoods.price}}</view>
+        <view>单独购买</view>
+      </view>
+    </view>
+    <view class='groupBuy Recommend'>
+      <view bindtap='gotoBuy' data-group='openGroup' >
+        <view class='price'>￥{{currentGoods.groupbyprice}}</view>
+        <view>一键开团</view>
+      </view>
+    </view>
+  </view>
+</view>
+<template is="servicePhone" data="{{servicePhone,showService}}" />

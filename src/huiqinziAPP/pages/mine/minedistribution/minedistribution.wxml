@@ -1,0 +1,72 @@
+<!--pages/mine/minedistribution/minedistribution.wxml-->
+ <wxs module="filters" src="addmul.wxs"></wxs> 
+<import src="../../../common/banner.wxml" />
+<page>
+<!-- 商品店铺-->
+     <view class='hotgoods'>
+      <view class='header-title'>
+       <image src='../../../img/mine/huo@2x.png'></image>
+       <text>热销商品</text>
+      </view>
+      <navigator class='bestSeller' wx:for="{{goodsArr}}" data-index='{{index}}' wx:key=''>
+       <image mode="widthFix" src='{{imageUrl+item.pics[0]}}' />
+      <view class='title'>{{item.city?"["+item.city+"]":""}} {{item.title}}</view>
+      <view class='footer-price'>
+      <view class='sell'>
+        <label class='priceC'>￥</label>
+        <label class='price'>{{item.price}}</label>
+        <label class='specialprice'>￥{{item.specialprice}}</label>
+        <label class='selled'>已售:{{item.sold}}</label>
+      </view> 
+      <view class='make-money'>
+       <button bindtap='cancel'>赚￥{{filters.toFix(item.price*rate)}}</button>
+      </view>
+     </view>
+     
+    </navigator>  
+    </view>
+     
+ <!--通知-->
+  <view class='modal-backdrop' hidden='{{!cancel}}'  wx:for="{{goodsArr}}" data-index='{{index}}'>
+  <view class='modal-container greet'>
+    <view class='modalheader'>
+     <view class='headerpic'><image mode='scaleToFill' src='{{imageUrl+item.pics[0]}}'></image></view>
+     <view class='headersell'>
+       <view class='headertitle'>{{item.city?"["+item.city+"]":""}} {{item.title}}</view>
+       <view class='headermoney'>金额：￥{{item.price}}</view>
+       <view class='headerincome'>邀请好友参加，赚￥{{filters.toFix(item.price*rate)}}</view>
+     </view>
+    </view>
+    <view class='method'>
+     <view class='way'>方式一：邀请卡邀请</view>
+     <view class="forward" bindtap='getInvitecard'><navigator class='btn-share' >获取我的邀请卡</navigator></view>
+    </view>
+    <view class='methodtwo'>
+     <view class='way'>方式二：小程序分享</view>
+     <view class="forward"><button class='btn-share' open-type='share'>分享惠亲子小程序</button></view>
+    </view>
+  </view>
+  <view class='quxiao' bindtap='cancel'><image src='../../../img/mine/xx@2x.png'></image></view>
+</view>
+
+<!--底部-->
+<view class='bottomBtns' id="bottomBtns">
+  <view class=''>
+  <navigator url='../../mine/minedistribution/minedistribution' style='background-color:#FFF'>
+    <view class='tab' id='sp2@x' bindtap='choseTab' onclick="choseTab">
+      <image src='../../../img/mine/sp2@2x_active.png'></image>
+      <view class='tab_active'>商品</view>
+    </view>
+    </navigator>
+  </view>
+  <view class=''>
+  <navigator url='../../mine/mine/mine' style='background-color:#FFF'>
+    <view class='tab' id='mine' bindtap='choseTab' onclick="choseTab">
+      <image src='../../../img/mine/mine.png'></image>
+      <view class='mine'>我的</view>
+    </view>
+    </navigator>
+  </view>
+</view>
+
+</page>

@@ -1,0 +1,58 @@
+.all{
+  
+  }
+.title{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  color: #666666;
+  font-size: 30rpx;
+  align-items: center;
+  border-bottom: 20rpx solid #EEE;
+
+}
+.title .order-num{
+  display: flex;
+  margin-left: 40rpx;
+
+}
+.order-num text{
+  color: #FF4747;
+  font-weight: bold;
+}
+.title .income{
+  display: flex;
+  margin-left:70rpx; 
+
+}
+.income text{
+  color: #FF4747;
+  font-weight: bold;
+  margin-left: 15rpx;
+}
+.order-detail{
+  width: 100%;
+  height: 400rpx;
+  border-bottom: 20rpx solid #EEE;
+  display: flex;
+  flex-direction: column;
+ 
+  padding: 10rpx 40rpx;
+
+}
+.main-item{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 60rpx;
+  }
+.item{
+  color: #999999;
+  font-size: 27rpx;
+  }
+.item2{
+ color: #666666;
+ font-size: 27rpx;
+ font-weight: bold;
+
+}

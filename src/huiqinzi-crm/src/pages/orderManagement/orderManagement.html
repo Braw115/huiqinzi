@@ -1,0 +1,174 @@
+<link rel="stylesheet" href="pages/orderManagement/orderManagement.css">
+<div class="box container-fluid box-header-line">
+    <div class="box-header"
+         style="padding-bottom: 20px; padding-top: 30px; border-bottom: 2px solid #ebebeb; margin-bottom: 20px;">
+        <span style="font-size:24px">订单管理</span>
+    </div>
+    <div class="form-horizontal">
+        <div class="form-group ">
+            <label class="col-md-3 col-sm-3 control-label">订单状态</label>
+            <div class="col-md-3 col-sm-3">
+
+                <select name="state" id="state" class="form-control ">
+                    <option value="">全部</option>
+                    <option value="wait-pay">待支付</option>
+                    <option value="wait-use">待使用</option>
+                    <option value="wait-send">待发货</option>
+                    <option value="shipped">已发货</option>
+                    <option value="used">已使用</option>
+                    <option value="wait-join">待组团</option>
+                </select>
+            </div>
+            <label class="col-md-3 col-sm-3 control-label usecode" hidden>兑换码搜索</label>
+            <div class="col-md-3 col-sm-3 usecode" hidden>
+                <input type="number" id="code" class="form-control " placeholder="兑换码模糊搜索">
+            </div>
+        </div>
+
+
+    </div>
+    <table id="tableLi" class="table table-bordered table-style" width="100%">
+        <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>下单数量</th>
+            <th>订单状态</th>
+            <th>姓名</th>
+            <th>手机号</th>
+            <th>兑换码</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="ul-add">
+
+        </tbody>
+    </table>
+
+
+</div>
+
+<div class="modal fade" id="modal_shipped" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">物流详情 </h4>
+            </div>
+            <div class="modal-body ">
+                <h5></h5>
+                <form class="form-horizontal">
+                    <div class="form-group temp" hidden>
+                        <label class="col-md-3 col-sm-3 control-label"></label>
+                        <div class="col-md-6 col-sm-6">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modalAdd_send" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">待发货 </h4>
+            </div>
+            <div class="modal-body editComImgCton">
+                <form class="form-horizontal">
+                    <div class="form-group checkType1 num">
+                        <label class="col-md-3 col-sm-3 control-label">快递公司</label>
+                        <div class="col-md-6 col-sm-6">
+                            <select name="logisticscode" id="logisticscode" class="form-control ">
+
+                            </select>
+                        </div>
+                        <!--<div class="col-md-3 col-sm-3 tip-icon">
+                                <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入开团价格"></i>
+                            </div>-->
+                    </div>
+                    <div class="form-group checkType2 num">
+                        <label class="col-md-3 col-sm-3 control-label">运单号</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="shippercode" class="form-control editTitle" verify="num"
+                                   placeholder="请输入运单号">
+                        </div>
+
+                        <!--<div class="col-md-3 col-sm-3 tip-icon">
+                                <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入购买价格"></i>
+                            </div>-->
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="doSend()">确定</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_detail" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" >订单详情</h4>
+            </div>
+            <div class="modal-body ">
+                <h5></h5>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">订单UUID</label>
+                        <div class="col-md-6 col-sm-6 uuid"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">商品名称</label>
+                        <div class="col-md-6 col-sm-6 goodsName"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">订单金额</label>
+                        <div class="col-md-6 col-sm-6 realtotal_fee"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">电话号码</label>
+                        <div class="col-md-6 col-sm-6 phone"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">备注</label>
+                        <div class="col-md-6 col-sm-6 remark"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">状态</label>
+                        <div class="col-md-6 col-sm-6 state"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">创建时间</label>
+                        <div class="col-md-6 col-sm-6 created"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>

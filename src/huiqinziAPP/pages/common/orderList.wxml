@@ -1,0 +1,13 @@
+<template nbame="orderList">
+  <navigator wx:for="{{orders}}" url="" class='' wx:key="">
+    <view class='img'>
+      <image src='{{item.img}}'></image>
+    </view>
+    <view class='orderInfos'>
+      <view class='title'>[{{item.district}}]{{item.title}}</view>
+      <view class='num'>{{item.num}}</view>
+      <view class='price'>{{item.price}}</view>
+    </view>
+    <view class='corderStatus'>{{item.corderStatus}}</view>
+  </navigator>
+</template>

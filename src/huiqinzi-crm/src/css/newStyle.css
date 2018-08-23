@@ -1,0 +1,194 @@
+.skin-blue .main-header .navbar {
+    background-color: #1F2233;
+}
+.skin-blue .main-header .logo {
+    background-color: #1F2233;
+    color: #588CFC;
+}
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #222630;
+}
+.content-wrapper, .right-side {
+    background-color: #363D4D;
+}
+.main-footer {
+    background: #363D4D;
+    border-top: 1px solid #363D4D;
+}
+.skin-blue .sidebar a {
+    color: #6C99FA;
+}
+
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a {
+    color: #fff;
+    background: #2E4E98;
+    border-left-color: #3c8dbc;
+}
+.skin-blue .sidebar-menu>li>.treeview-menu {
+    margin: 0 1px;
+    background: #434B5E;
+}
+.skin-blue .treeview-menu>li>a {
+    color: #6C99FA;
+}
+.nav > li > a:hover, .nav > li > a:active, .nav > li > a:focus {
+    color: #fff;
+    background: transparent;
+}
+.skin-blue .main-header .navbar .sidebar-toggle {
+    color: #6C99FA;
+}
+#account {
+    color: #6C99FA;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+.text-success {
+    color: #23DB23;
+}
+
+table.dataTable thead tr th.sorting_asc, table.dataTable thead tr td.sorting_asc {
+    background: #606BA1 url(../img/sort_asc.png) no-repeat center right;
+}
+table.dataTable thead tr th.sorting_desc, table.dataTable thead tr td.sorting_desc {
+    background: #606BA1 url(../img/sort_desc.png) no-repeat center right;
+}
+table.dataTable thead tr th.sorting, table.dataTable thead tr td.sorting {
+    background: #606BA1 url(../img/sort_both.png) no-repeat center right;
+}
+table.dataTable>thead>tr>th {
+    white-space: nowrap;
+    font-weight: bold;
+    background: #606BA1;
+    color: #fff;
+    border-bottom-width: 0;
+}
+
+
+
+.modal-dialog {
+    margin: 30px auto;
+}
+@media (min-width: 768px) {
+    .modal-dialog {
+        margin: 80px auto;
+    }
+}
+@media (min-width: 1200px) {
+    .modal-dialog {
+        margin: 130px auto;
+    }
+}
+
+
+
+/* bootstrap样式 */
+a {
+    color: #6587DD;
+}
+.text-primary {
+    color: #6587DD;
+}
+.bg-primary {
+    color: #fff;
+    background-color: #6587DD;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #6587DD;
+    border-color: #6587DD;
+}
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+  background-color: #6587DD;
+  border-color: #6587DD;
+}
+.btn-primary .badge {
+  color: #6587DD;
+  background-color: #fff;
+}
+.btn-link {
+    font-weight: normal;
+    color: #6587DD;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: #6587DD;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+    background-color: #eee;
+    border-color: #6587DD;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #6587DD;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #6587DD;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background-color: #6587DD;
+    border-color: #6587DD;
+}
+.label-primary {
+    background-color: #6587DD;
+}
+.list-group-item.active > .badge,
+.nav-pills > .active > a > .badge {
+    color: #6587DD;
+    background-color: #fff;
+}
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+    border-color: #6587DD;
+}
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+    color: #fff;
+    background-color: #6587DD;
+    border-color: #6587DD;
+}
+.panel-primary {
+    border-color: #6587DD;
+}
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #6587DD;
+    border-color: #6587DD;
+}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #6587DD;
+}
+.panel-primary > .panel-heading .badge {
+    color: #6587DD;
+    background-color: #fff;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: #6587DD;
+}
+
+.updatePassword{
+    background-color: #3b468e;
+    margin-right: 20px;
+}

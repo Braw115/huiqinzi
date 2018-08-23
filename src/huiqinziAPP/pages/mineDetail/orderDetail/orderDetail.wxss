@@ -1,0 +1,72 @@
+/* pages/mineDetail/orderDetail/orderDetail.wxss */
+
+page {
+  min-height: 100%;
+  background-color: #f4f4f4;
+  width: 100%;
+}
+
+.status {
+  line-height: 36pt;
+  padding-left: 20rpx;
+  color: #fff;
+}
+
+.waitUse {
+  background-color: #41be78;
+}
+
+.detail {
+  background-color: #fff;
+  padding: 20rpx;
+}
+
+.detail>view {
+  padding: 12rpx 0; 
+}
+
+.detail .title {
+  font-weight: 900;
+}
+
+.detail .norms {
+  background-color: #FF4747;
+  color: #fff;
+  display: inline-block;
+ padding:10rpx 20rpx;
+
+  border-radius: 5rpx;
+}
+
+.detail .time {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail .time>view {
+  flex: 1;
+  text-align: left;
+  color: #999;
+}
+
+.detail .info {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail .info .tag {
+  flex: 2;
+}
+
+.detail .info>view:not(.tag) {
+  flex: 5;
+  text-align: left;
+}
+
+.detail .info .price {
+  color: #e60012;
+}
+
+.detail .info .verifyCode {
+  font-size: 14pt;
+}

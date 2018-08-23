@@ -1,0 +1,17 @@
+<!--pages/typeEntrance/groupBuy/groupBuy.wxml-->
+<import src="../../common/goodsList.wxml" />
+<import src="../../common/typeList.wxml" />
+
+
+
+<view class='page'>
+  <image class='groupBuyHeader' src='../../../img/groupBuyHeader.png'></image>
+    <scroll-view class="actionTypes types" scroll-x="true" bindscroll="scroll" style="width: 100%" bindscrolltolower="gotoFirstType" bindscroll="typeScroll" scroll-into-view="{{toType}}">
+    <view wx:for="{{subCatogerys}}" id="{{item.uuid}}" class='type  {{activeSubCatogery==item.uuid?"active":""}}' bindtap='choseActionType' wx:key="">
+      {{item.name}}
+      <view wx:if='{{activeSubCatogery==item.uuid}}' class='activeTypeBorder'></view>
+    </view>
+  </scroll-view>
+  <template is="goodsListHaveBtn" data="{{activities,detailPage}}"/>
+ <view wx:if='{{activities.length==0}}' class='emptyList'>商品已被抢空！</view>
+</view>

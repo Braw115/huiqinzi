@@ -1,0 +1,17 @@
+<!--pages/typeEntrance/hotSell/hotSell.wxml-->
+<import src="../../common/goodsList.wxml" />
+
+<view class='bestSellers'>
+  <view wx:if='{{hotSells.length==0}}' class='emptyList'>商品已被抢空！</view>
+  <navigator class='bestSeller' wx:for="{{hotSells}}" data-idx='{{index}}' wx:key="" url='../../goodsDetail/groupBuy/groupBuy?goodsuuid={{item.uuid}}'>
+    <image mode='widthFix' src='{{imageUrl+item.img}}' />
+    <!-- //widthFix   -->
+    <view class='title'>{{item.city?"["+item.city+"]":""}} {{item.title}}</view>
+    <view class='sell'>
+      <label class='priceC'>￥</label>
+      <label class='price'>{{item.price}}</label>
+      <label class='specialprice'>￥{{item.specialprice}}</label>
+      <label class='selled'>已售:{{item.sold}}</label>
+    </view>
+  </navigator>
+</view>

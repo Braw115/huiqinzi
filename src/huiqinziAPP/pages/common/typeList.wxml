@@ -1,0 +1,9 @@
+
+<template name="typeList">
+ <scroll-view class="types " scroll-x="true"  style="width: 100%" >
+    <view wx:for="{{types}}" id="{{item.aType}}" class='type {{activeType==item.aType?"active":""}}' bindtap='choseActionType' wx:key="">
+      {{item.aName}}
+      <view wx:if='{{activeType==item.aType}}' class='activeTypeBorder'></view>
+    </view>
+  </scroll-view>
+</template>

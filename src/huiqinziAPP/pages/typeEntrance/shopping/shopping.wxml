@@ -1,0 +1,22 @@
+<!--pages/shopping/shopping.wxml-->
+<import src="../../common/addressList.wxml" />
+
+<view class='page'>
+  <scroll-view class="actionTypes types" scroll-x="true" bindscroll="scroll" style="width: 100%" bindscrolltolower="gotoFirstType" bindscroll="typeScroll" scroll-into-view="{{toType}}">
+    <view wx:for="{{subCatogerys}}" id="{{item.uuid}}" class='type {{activeSubCatogery==item.uuid?"active":""}}' bindtap='choseActionType' wx:key="">
+      {{item.name}}
+      <view wx:if='{{activeSubCatogery==item.uuid}}' class='activeTypeBorder'></view>
+    </view>
+  </scroll-view>
+  <view class='goodsListSP'>
+    <navigator wx:for="{{goodsListSP}}"  data-idx='{{index}}' wx:key="index" url='../../goodsDetail/groupBuy/groupBuy?goodsuuid={{item.uuid}}' class='goodsListSP_item {{index%2==1?"hasmargin":""}}'>
+      <!-- <view class='goodsImg '> -->
+        <image class='goodsImg' mode="widthFix" src='{{imageUrl+item.img}}'></image>
+      <!-- </view> -->
+      <view class='goodsName'>{{item.title}}</view>
+      <view class='goodsInfo'>{{item.info}}</view>
+      <view class='price'>{{item.price}}元</view>
+    </navigator>
+  </view>
+  <view wx:if='{{goodsListSP.length==0}}' class='emptyList'>商品已被抢空！</view>
+</view>

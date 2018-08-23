@@ -1,0 +1,108 @@
+page {
+  background-color: #f4f4f4;
+  margin-bottom: 50pt;
+  font-size: 10pt;
+}
+.flexBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 45rpx 45rpx;
+}
+.getCashSetting{
+  background: #FFF;
+  margin: 20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 336rpx;
+  
+}
+.getCash .title {
+  padding: 25rpx 25rpx;
+}
+
+.getCash .tag {
+  color: #333;
+  font-weight: 800;
+}
+
+.getCash .content {
+  flex: 2;
+  text-align: left;
+  color: #999;
+}
+
+.getCash .getCashHistory {
+  text-align: right;
+}
+
+.getCash .getCashHistory .gotoWithdrawHistory {
+  color: #62d1d0;
+}
+
+.getCash .canWithdraw {
+  font-weight: 700;
+  color: 30rpx;
+}
+.setting{
+  width: 100%;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+
+}
+
+.getCashSetting .discribe>view {
+  height: 60pt;
+}
+
+.getCashSetting textarea {
+  width: 100%;
+  height: 100%;
+}
+.getCashSetting .content{
+  color: #333;
+}
+
+.getCashHistory>navigator {
+  display: inline-block;
+  color: #62d1d0;
+  text-align: right;
+  font-size: 28rpx;
+}
+
+.getCash .tips {
+  align-items: top;
+}
+
+.getCash .tips>view {
+  min-height: 60pt;
+}
+
+.getCash .tips .content {
+  flex: 9;
+  font-size: 26rpx;
+}
+
+.getCash .tips .content text {
+  color: #fdb429;
+}
+
+.getCash .tips .tag {
+  min-width: 30pt;
+  color: #999;
+}
+
+#submitGetCash {
+  background-color: #ff4747;
+  color: #fff;
+  text-align: center;
+  font-size: 36rpx;
+  width: 690rpx;
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}

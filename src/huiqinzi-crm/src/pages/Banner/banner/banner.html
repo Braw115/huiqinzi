@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="pages/Banner/banner/banner.css">
+<link rel="stylesheet" href="pages/goodsManagement/editGoods.css">
+<div class="box container-fluid box-header-line">
+    <div class="box-header" style="padding-bottom: 20px; padding-top: 30px; border-bottom: 2px solid #ebebeb; margin-bottom: 20px;">
+        <span style="font-size:24px; ">首页banner</span>
+        <button class="btn btn-primary pull-right bankadmin subadmin clerk businessmen" onclick="openAdd()">新增Banner</button>
+    </div>
+
+    <table id="tableLi" class="table table-style" width="100%">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>图片</th>
+                <th>创建时间</th>
+                <th>查看</th>
+            </tr>
+        </thead>
+        <tbody class="ul-add">
+
+        </tbody>
+    </table>
+</div>
+
+<!--轮播管理模态框-->
+<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">轮播管理</h4>
+            </div>
+            <div class="modal-body editComImgCton">
+                <form id="form1" class="form-horizontal">
+                  
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label"> 排序</label>
+                        <div class="col-md-6 col-sm-6">
+                            <select name="position" id="position" class="form-control ">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">活动名称</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="gooduuid" class="form-control " placeholder="请选择活动链接" onfocus="getGoods()" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">活动简介</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="synopsis" class="form-control " placeholder="请输入活动简介">
+                        </div>
+                    </div>
+                    <div class="  clearfix">
+                        <label class="col-md-3 col-sm-3 control-label">请上传分类图标</label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <div>
+                                <span class="" style="color: lightgray;margin-top: 15px">jpg/png格式,尺寸160*120，图片大小不能超过2M</span>
+                            </div>
+                            <div class="image-wrapper-middle">
+                                <i class="image fa fa-picture-o"></i>
+                                <div class="uploadBtn" >
+                                    + 选择文件
+                                    <input size="100" type="file" onchange="uploadImage(this)" name="middlepic" id="pic" accept="image/*" class="middlepic">
+                                </div>
+                                <div class="cover-middle" style="display: none"></div>
+                                <span class="trash-icon-middle" onclick="deleteImage(this)" style="display: none" data-type="thressimg" data-index="0">
+                                    <i class="fa fa-trash-o fa-lg" style="opacity: 1"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="saveUser()">确定</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal_goodsList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">商品列表 </h4>
+            </div>
+            <div class="modal-body ">
+                <div>
+                    <label class="col-md-3 col-sm-3 control-label">请选择一级分类</label>
+                    <div class="col-md-3 col-sm-3">
+                        <select name="categoryG" id="categoryG" class="form-control ">
+                        </select>
+                    </div>
+                    <label class="col-md-3 col-sm-3 control-label">请选择二级分类</label>
+                    <div class="col-md-3 col-sm-3">
+                        <select name="subcategoryG" id="subcategoryG" class="form-control ">
+                        </select>
+                    </div>
+
+                </div>
+                <table id="table_goodsList" class="table table-bordered table-style" width="100%">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>标题</th>
+                            <th>价格</th>
+                            <th>城市</th>
+                            <th>创建时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="ul-add">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>

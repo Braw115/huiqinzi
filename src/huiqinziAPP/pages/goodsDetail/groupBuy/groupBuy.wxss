@@ -1,0 +1,157 @@
+/* pages/goodsDeatil/groupBuy/groupBuy.wxss */
+@import "../../../lib/wxParse/wxParse.wxss";
+
+page {
+  padding-bottom: 40pt;
+}
+page swiper{
+  height: 44vw - 11rpx;
+  margin:0 25rpx;
+}
+.page {
+  padding: 20rpx;
+}
+.norms .title {
+  font-weight: 800;
+  padding: 15rpx 0;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.norms .norm {
+  display: inline-block;
+  padding: 10rpx;
+  min-width: 50%;
+  margin: 10rpx 0;
+  border-radius: 10rpx;
+  text-align: center;
+  margin-right: 10%;
+  background-color: #d9d9d9;
+  color: #999;
+}
+
+.norms .allNorms .active {
+  background-color: #ff4747;
+  color: #fff;
+  border-color: #ff4747;
+}
+
+.groups .title {
+  font-weight: 800;
+  padding: 15rpx 0;
+  border-bottom: 1pt solid #d7d7d7;
+}
+
+.group {
+  padding: 10rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.group image {
+  width: 44pt;
+  height: 44pt;
+  border-radius: 50%;
+}
+
+.group .surplusNum {
+  font-size: 11pt;
+  padding-left: 30rpx;
+  flex: 1;
+}
+
+.group .gotoBuy {
+  /* padding: 5rpx 25rpx; */
+  /* float: right;
+  margin-top: 5pt; */
+  background-color: #FF4747;
+  color: #fff;
+  border-radius: 14pt;
+  width: 86pt;
+  text-align: center;
+  line-height: 28pt;
+  font-size: 13pt;
+}
+
+.bottomBtns>view:not(.customerService) {
+  padding: 7pt 0;
+  line-height: 14pt;
+}
+
+.bottomBtns .signalBuy {
+  border-right: 1px solid #d7d7d7;
+  border-left: 1px solid #d7d7d7;
+  background-color: #FEA2A2;
+  color: #fff;
+}
+
+.bottomBtns .signalBuy>text {
+  opacity: 1;
+  display: inline-block;
+}
+
+.goodsDeatil .content {
+  color: #666;
+  padding-bottom: 3pt;
+}
+
+
+
+.calendar .calendarWeek {
+  background-color: #f2f5fa;
+}
+
+.calendarHeader {
+  line-height: 30pt;
+  font-weight: 800;
+}
+
+.calendarHeader .nowMonth {
+  text-align: center;
+  color: #625033;
+}
+
+.calendarHeader .preMonth {
+  text-align: right;
+  color: #a5a5a5;
+}
+
+.calendarHeader .nextMonth {
+  text-align: left;
+  color: #3d3d3d;
+}
+
+.calendarWeek {
+  margin-left: -20rpx;
+  width: calc(100% + 40rpx);
+}
+
+.calendarWeek .week {
+  text-align: center;
+  line-height: 20pt;
+  font-size: 9pt;
+}
+
+.calendarDates .flexBox {
+  font-size: 8pt;
+  line-height: 100%;
+  color: #d2d2d2;
+  text-align: center;
+  height: 30pt;
+}
+
+.calendarDates .date {
+  display: inline-block;
+  padding: 10pt;
+  border-radius: 5pt;
+}
+
+.calendarDates .startDate {
+  background-color: #f60;
+  color: #fff;
+}
+
+.calendarDates .endDate {
+  background-color: #05d74f;
+  color: #fff;
+}

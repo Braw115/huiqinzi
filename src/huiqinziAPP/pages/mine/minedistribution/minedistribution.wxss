@@ -1,0 +1,261 @@
+
+ .hotgoods{
+ padding: 0rpx 40rpx;
+ border-top: 5rpx solid #EEE;
+ margin-bottom: 130rpx;
+}
+.header-title{
+  width: 100%;
+  height: 72rpx;
+}
+.header-title image{
+  width: 10pt;
+  height: 14pt;
+}
+.header-title text{
+  color: #FF4747;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-left: 15rpx;
+}
+.bestSellers {
+  text-align: center;
+  padding: 0 20rpx 20rpx;
+}
+navigator  .navigator-hober{
+  background-color: #FFFFFF;
+
+}
+
+.bestSellers .bestSeller {
+  width: 100%;
+  padding: 20rpx 0;
+}
+
+.bestSellers .bestSellerTitle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  color: #999;
+  padding: 20rpx 15rpx 0;
+}
+
+.bestSellers image.title {
+  width: 60%;
+  height: 18px;
+ 
+}
+
+.bestSeller  image {
+  width: 100%;
+}
+
+.bestSeller .footer-price {
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  padding: 10rpx;
+}
+
+.bestSeller .make-money {
+  width: 250rpx;
+  height: 75rpx;
+  display: flex;
+  margin-left: 70rpx
+}
+.make-money button{
+  width: 259rpx;
+  height: 68rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff4747;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.footer-price .sell {
+  width: 50%;
+  height: 80rpx;
+  display: flex;
+  align-items:center;
+}
+
+.bestSeller .title {
+  text-align: left;
+  padding-top: 10rpx;
+  font-size: 24rpx;
+  color: #333;
+  line-height: 15pt;
+  font-weight: bold;
+}
+
+.bestSeller .sell .priceC {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #ff4747;
+}
+
+.bestSeller .sell .price {
+  color: #ff4747;
+  font-size: 14pt;
+  font-weight: 800;
+}
+
+.bestSeller .sell .selled {
+  padding-left: 20rpx;
+  color: #999;
+  font-size: 10pt;
+}
+
+.bestSeller .sell .specialprice {
+  padding: 0 20rpx;
+  color: #999;
+  font-size: 10pt;
+  text-decoration: line-through;
+} 
+.modal-backdrop {
+  background: RGBA(137, 137, 137, 0.87);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.modal-container {
+  align-items: center;
+  background: #fff;
+  margin: 70rpx 33rpx 0;
+  border-radius: 10rpx;
+  flex-wrap: wrap;
+  height: 780rpx;
+}
+.modal-backdrop .modalheader{
+  width: 100%;
+  height: 210rpx;
+  display: flex;
+  padding: 15rpx 40rpx;
+
+}
+.modalheader .headerpic{
+  display: flex;
+  width: 35%;
+  flex-direction: column;
+  height: 210rpx;
+  justify-content: center;
+
+}
+.modalheader image{
+  width: 85pt;
+  height: 50pt;
+  border-radius: 5%;
+
+}
+.modalheader .headersell{
+   width: 65%;
+  height: 210rpx;
+  display: flex;
+  flex-direction: column;
+  line-height: 40rpx;
+  justify-content: center;
+  padding: 0rpx 30rpx;
+}
+.headersell .headertitle{
+  color: #333333;
+  font-size: 24rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: "......";
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+}
+.headersell .headermoney{
+  color: #999999;
+  font-size: 24rpx;
+
+}
+.headersell .headerincome{
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.modal-backdrop .method
+{
+   width: 100%;
+  height: 260rpx;
+  padding: 40rpx 0rpx;
+}
+.modal-container .way{
+  color: #333333;
+  font-size: 28rpx;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 50rpx;
+
+}
+.modal-container .forward{
+  width: 100%;
+  height: 100rpx;
+  align-items: center;
+
+}
+.modal-container .btn-share{
+  width: 338rpx;
+  height: 88rpx;
+  border-radius: 50rpx;
+  border: 1rpx solid #FF4747;
+  background-color: #FFFFFF;
+   color:#FF4747;
+  font-size: 28rpx;
+  margin-left: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quxiao{
+  position: fixed;
+  bottom: 200rpx;
+  left: 330rpx;
+}
+.quxiao image{
+  width: 90rpx;
+  height: 90rpx;
+
+}
+
+.bottomBtns .tab view {
+  line-height: 1pt;
+  color: #999;
+}
+
+.bottomBtns .tab .tab_active {
+  color: #ff4747;
+  font-size: 22rpx;
+}
+
+.tab view {
+  font-size: 22rpx;
+}
+
+.bottomBtns .tab {
+  display: inline-block;
+}
+
+.bottomBtns .tab image {
+  width: 20pt;
+  height: 20pt;
+  vertical-align: middle;
+}
+
+.bottomBtns {
+  top: calc(100% - 50pt);
+}
+
+

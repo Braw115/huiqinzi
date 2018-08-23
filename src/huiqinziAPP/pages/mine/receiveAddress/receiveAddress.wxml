@@ -1,0 +1,35 @@
+<!--pages/mine/receiveAddress/receiveAddress.wxml-->
+<view class='page'>
+<view class='graySeparate'></view>
+  <view class='addrItem' wx:for="{{addres}}" wx:key="">
+    <view class='itemContent'>
+      <view class='flexBox'>
+        <view class='username'>{{item.contact}}</view>
+        <view class='phone'>{{item.phone}}</view>
+      </view>
+      <view class='addr'>{{item.address}}</view>
+      <view class='flexBox operation'>
+        <view class='isDefault'>
+          <text class='iconfont icon-circle {{"yes"==item.defaul?"active":""}}' bindtap='defAddr' data-uuid="{{item.uuid}}"></text>
+          <label>设为默认</label>
+          </view>
+        <view class='edit'>
+          <text class='iconfont icon-edit' bindtap='editAddr' data-uuid="{{item.uuid}}" data-index="{{index}}"></text>
+          <label>编辑</label>
+          </view>
+        <view class='delete'>
+          <text class='iconfont icon-delete' bindtap='delAddr' data-uuid="{{item.uuid}}"></text>
+          <label>删除</label>
+          </view>
+      </view>
+    </view>
+
+    <view class='graySeparate'>
+    </view>
+  </view>
+<view class='bottomBtns'>
+    <view class='addAddr Recommend'>
+    <navigator url='../../mineDetail/address/address'>新建地址</navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<!--pages/mineDetail/changeShopName/changeShopName.wxml-->
+
+<view class=' flexBox'>
+  <view class='tag'>
+    <input id='shopName' value='{{shopName}}' bindinput='listenInput'></input>
+  </view>
+  <view class='content '>
+    <text class='iconfont icon-delete'></text>
+  </view>
+</view>
+
+<view class='bottomBtns'>
+  <view class='Recommend' bindtap='changeShopName'>
+    保存店铺名称
+  </view>
+</view>

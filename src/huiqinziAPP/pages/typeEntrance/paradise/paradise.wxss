@@ -1,0 +1,18 @@
+/* pages/typeEntrance/paradise/paradise.wxss */
+
+.page {
+  padding: 0 20rpx;
+}
+
+.type {
+  width: auto;
+  padding: 0 20rpx;
+  height: 65rpx;
+  line-height: 50rpx;
+  font-weight: 800;
+}
+
+.type:not(:first-child) {
+  margin-left: 30rpx;
+}
+

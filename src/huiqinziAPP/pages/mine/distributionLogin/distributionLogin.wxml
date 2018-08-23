@@ -1,0 +1,23 @@
+<!--Pages/mine/distributionLogin/distributionLogin.wxml-->
+<!-- <import src="../../../common/banner.wxml" /> -->
+<view>
+ <view class='title'>
+ <text>欢迎成为我们的分销达人</text>
+ </view>
+ <view class='invite-num'>
+   <button>{{inviteCode}}</button>
+ </view>
+ <view class='invite-rule'>
+  <view class='rule'>只需要复制该邀请码发给好友，三人或三人以上通过邀请码进入并注册，就可以成为分销达人哦成为分销达人我们还有
+       <text>10元</text>红包作为入门奖励</view>
+ </view>
+ <view class='invite-avatar'>
+  <view class='avatar' wx:for='{{person}}' wx:if='{{index<3}}' wx:key=''>
+    <image src="{{item.headurl}}"></image>
+   </view>
+  
+ </view>
+ <view class='btn-distribution' catchtap='gotodistribution'>
+   <button  class='{{active?"btn-a":"btn"}}' hover-class='{{active?"btn-press":""}}'>开启分销中心</button>
+   </view>
+</view>

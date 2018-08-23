@@ -1,0 +1,58 @@
+/* pages/mine/receiveAddress/receiveAddress.wxss */
+@import "../../../lib/style/font.wxss";
+
+.page {
+  padding: 0;
+}
+
+page {
+  background-color: #f4f4f4;
+}
+
+.addrItem .itemContent {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.addrItem .itemContent .phone {
+  flex: 2;
+}
+
+.addrItem .itemContent .flexBox:first-of-type {
+  font-weight: 800;
+}
+
+.addrItem .itemContent .addr {
+  padding: 30rpx 0;
+  font-size: 9pt;
+}
+
+.addrItem .itemContent .operation {
+  color: #999;
+  font-size: 8pt;
+}
+
+.addrItem .itemContent .operation>view:not(:first-of-type) {
+  text-align: right;
+}
+
+.addrItem .operation label {
+  display: inline-block;
+  padding-left: 10rpx;
+  line-height: 40rpx;
+}
+
+.addrItem .operation text {
+  vertical-align: middle;
+}
+.addrItem .operation text.icon-edit{
+  font-size: 34rpx;
+}
+
+.addrItem .operation .active {
+  color: #FF4747;
+}
+
+.addrItem .operation .active:before {
+  content: "\e604";
+}

@@ -1,0 +1,137 @@
+<div class="box container-fluid box-header-line">
+    <div class="box-header" style="padding-bottom: 20px; padding-top: 30px; border-bottom: 2px solid #ebebeb; margin-bottom: 20px;">
+        <span style="font-size:24px">系统设置</span>
+    </div>
+    <table id="tableLi" class="table table-bordered table-style" width="100%">
+        <thead>
+            <tr>
+                <th>属性名</th>
+                <th>属性值</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="ul-add">
+
+        </tbody>
+    </table>
+
+
+</div>
+
+<div class="modal fade" id="modalAdd_rebate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">系统属性设置 </h4>
+            </div>
+            <div class="modal-body editComImgCton">
+                <form id="form1" class="form-horizontal">
+                    <div class="form-group checkType1 num">
+                        <label class="col-md-3 col-sm-3 control-label">一级返佣率</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="rebate1" class="form-control editTitle" placeholder="请输入一级返佣率">
+                        </div>
+                        <!--<div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入开团价格"></i>
+                        </div>-->
+                    </div>
+                    <div class="form-group checkType2 num">
+                        <label class="col-md-3 col-sm-3 control-label">二级返佣率</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="rebate2" class="form-control editTitle" placeholder="请输入二级返佣率">
+                        </div>
+                        <!--<div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入购买价格"></i>
+                        </div>-->
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="saveSetting()">确定</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAdd_service" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="">系统属性设置 </h4>
+            </div>
+            <div class="modal-body editComImgCton">
+                <form id="form2" class="form-horizontal">
+                    <div class="form-group checkType1 num">
+                        <label class="col-md-3 col-sm-3 control-label">客服电话</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="phone" class="form-control editTitle" placeholder="请输入一级返佣率">
+                        </div>
+                        <!--<div class="col-md-3 col-sm-3 tip-icon">
+                                <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入开团价格"></i>
+                            </div>-->
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="saveSetting()">确定</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAdd_hotsearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="">系统属性设置 </h4>
+            </div>
+            <div class="modal-body editComImgCton">
+                <form class="form-horizontal">
+                    <div class="form-group checkType1 num">
+                        <label class="col-md-3 col-sm-3 control-label">热搜榜</label>
+                        <div class="col-md-6 col-sm-6">
+                            <select name="hotsearchs" class="form-control " id="hotsearchs">
+                                <option class="new" value="new">新增热搜</option>
+                            </select>
+                        </div>
+                        <!--<div class="col-md-3 col-sm-3 tip-icon">
+                                <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入开团价格"></i>
+                            </div>-->
+                    </div>
+                    <div class="form-group checkType1 num">
+                        <label class="col-md-3 col-sm-3 control-label">热搜关键字</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="hotsearchKW" class="form-control " placeholder="请输入热搜关键字">
+                        </div>
+                        <!--<div class="col-md-3 col-sm-3 tip-icon">
+                                <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入开团价格"></i>
+                            </div>-->
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="delHotSearch()">删除</button>
+                    <button type="button" class="btn btn-primary" onclick="saveSetting()">保存</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>

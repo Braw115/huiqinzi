@@ -1,0 +1,71 @@
+/* pages/search/search.wxss */
+@import "../../../lib/style/font.wxss";
+
+.page {
+  padding: 20rpx;
+}
+
+.header>view {
+  display: inline-block;
+}
+
+.header .cancle {
+  width: 140rpx;
+  text-align: center;
+  color: #ff4747;
+  vertical-align: top;
+  font-size: 13pt;
+  line-height: 28pt;
+}
+
+.searchInput {
+  border: 1px solid #e6e6ea;
+  position: relative;
+  border-radius: 4px;
+  padding-left: 85rpx;
+  font-size: 13pt;
+  line-height: 28pt;
+  height: 28pt;
+}
+
+.searchInput text {
+  position: absolute;
+  left: 30rpx;
+  top: 18rpx;
+}
+
+.header .search {
+  width: calc(100% - 140rpx);
+  position: relative;
+}
+
+.header .search image {
+  width: 13pt;
+  height: 13pt;
+  position: absolute;
+  top: 8pt;
+  left: 13pt;
+}
+
+.searchKWs .title {
+  font-weight: 600;
+  padding: 20rpx 0;
+  line-height: 28pt;
+  color: #666666;
+  font-size: 13pt
+}
+
+.searchKWs .title label {
+  float: right;
+}
+
+.searchKWs .KWs .KW {
+  border: 1px solid #dcdcdc;
+  padding: 0 10rpx;
+  display: inline-block;
+  border-radius: 6rpx;
+  margin: 0 30rpx 30rpx 0;
+  color: #999;
+  font-size: 13pt;
+  line-height: 20pt;
+}

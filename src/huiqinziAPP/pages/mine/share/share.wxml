@@ -1,0 +1,47 @@
+ <wxs module="filters" src="addmul.wxs"></wxs> 
+<view class="all">
+  <view class='modal-backdrop'>
+    <view class='header-title'>
+      <text>每成功邀请一位好友,即可赚钱{{price*rate}}元</text>
+    </view>
+    <view class='main-content'>
+      <view class='body'>
+        <image src='{{imageUrl+pics[0]}}' ></image>
+        </view>
+        <view class='header'>
+          <view class='content-avatar'>
+            <view class='avatar'>
+              <image src='{{headurl}}'></image>
+            </view>
+          </view>
+          <view class='content'>
+            <view class='name'>{{wxname}}</view>
+            <view class='invite'>邀请您参加</view>
+          </view>
+          <view class='sharer'>
+            <text>第{{sharenum}}位分享者</text>
+          </view>
+        
+      </view>
+      <view class='bottom'>
+        <view class='bottom-title'>{{city?"["+city+"]":""}} {{title}}</view>
+        <view class='bottom-share'>
+          <view class='share-way'>
+            <text>长按识别二维码即可抢购</text>
+          </view>
+          <view class='code' bindtap='previewImage'>
+            <image src='{{qrCode}}' mode="aspectFit" src="{{imagePath}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='footer-title'>
+      <text>截图发给好友,好友购买后即可获取佣金哟~</text>
+    </view>
+  </view>
+   <view class="canvas-box">
+      <canvas hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#fff;" canvas-id="mycanvas" />
+    </view>
+    <image src='{{imagePath}}' class='canvas-img'></image>
+</view>

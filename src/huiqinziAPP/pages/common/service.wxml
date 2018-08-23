@@ -1,0 +1,5 @@
+<template name="servicePhone">
+  <view class='servicePhone' wx:if="{{showService}}" bindtap='showService'>
+    <text>客服电话：{{servicePhone}}</text>
+  </view>
+</template>

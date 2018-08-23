@@ -1,0 +1,45 @@
+<page>
+  <view class='all'>
+    <view class='title'>
+      <view class='order-num'>
+        <view>订单 ：</view>
+        <view><text>{{orderNum}}</text>个</view>
+      </view>
+      <view class='income'>
+        <view>累积收益 : </view>
+        <view><text>{{income}}</text>元</view>
+      </view>
+      <view>
+
+      </view>
+    </view>
+    <view class='order-detail' wx:for='{{orderArr}}' wx:key=''>
+      <view class='main-item'>
+        <view class='item'>订单编号</view>
+        <view class='item2'>{{item.uuid}}</view>
+      </view>
+      <view class='main-item'>
+        <view class='item'>订单时间</view>
+        <view class='item2'>{{item.created}}</view>
+      </view>
+      <view class='main-item'>
+        <view class='item'>商品</view>
+        <view class='item2'>{{item.goods}}</view>
+      </view>
+      <view class='main-item'>
+        <view class='item'>订购人</view>
+        <view class='item2'>{{item.name}}</view>
+      </view>
+      <view class='main-item'>
+        <view class='item'>成交价格</view>
+        <view class='item2'>{{item.total_fee}}</view>
+      </view>
+      <view class='main-item'>
+        <view class='item'>邀请奖励</view>
+        <view class='item2'>{{item.brokerage1}}</view>
+      </view>
+    </view>
+</view>
+
+
+</page>

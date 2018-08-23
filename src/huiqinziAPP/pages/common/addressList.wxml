@@ -1,0 +1,8 @@
+<template name="addressList" >
+<view class='addresses {{showAddrs?"showAddrs":""}}'>
+    <span wx:for="{{addresses}}" wx:for-index="idx" wx:for-item="item" wx:key="" bindtap="chooseAddr" data-addr="{{item}}">
+      <view wx:if="{{idx%3==1}}" class='center active'> {{item}}站 </view>
+      <view wx:else> {{item}}站 </view>
+    </span>
+  </view>
+</template>

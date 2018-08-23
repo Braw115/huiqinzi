@@ -1,0 +1,224 @@
+<!--pages/mine/distribution.wxml-->
+<view class='page' wx:if="{{choseTab=='mine'}}">
+  <view class='title'>
+    基础信息
+  </view>
+  <view class='infos userInfos'>
+
+    <view class=' flexBox'>
+      <view class='tag'>
+        姓名
+      </view>
+      <view class='content black'>
+        {{wxUSer.realname ||"暂未设定"}}
+      </view>
+    </view>
+    <view class=' flexBox'>
+      <view class='tag black'>
+        手机
+      </view>
+      <view class='content'>
+        {{wxUSer.phone ||"暂未设定" }}
+      </view>
+    </view>
+    <view class=' flexBox'>
+      <view class='tag'>
+        顾客数量
+      </view>
+      <view class='content'>
+        {{wxUSer.customer }}
+      </view>
+    </view>
+    <view class=' flexBox'>
+      <view class='tag'>
+        已提现金额
+      </view>
+      <view class='content'>
+        ￥ {{wxUSer.withdrawbalance }}
+      </view>
+    </view>
+    <view class=' flexBox'>
+      <view class='tag'>
+        提现中金额
+      </view>
+      <view class='content'>
+        ￥ {{wxUSer.pending || 0 }}
+      </view>
+    </view>
+    <view class=' flexBox'>
+      <view class='tag'>
+        可提现金额
+      </view>
+      <view class='content'>
+        ￥ {{wxUSer.balance }}
+      </view>
+    </view>
+    <view class=' flexBox'>
+      <view class='tag'>
+        预计返佣
+      </view>
+      <view class='content'>
+        ￥ 0
+      </view>
+    </view>
+  </view>
+
+  <view class='title'>
+    店铺信息
+  </view>
+  <view class='infos shopInfos'>
+    <view class=' flexBox'>
+      <view class='tag'>
+        店名
+      </view>
+      <view class='content '>
+        <navigator url='../../mineDetail/changeShopName/changeShopName?logo={{logo}}&shopName={{wxUSer.storename}}'>
+          {{wxUSer.storename ||"暂未设定"}}
+          <text class='iconfont icon-right'></text>
+        </navigator>
+      </view>
+    </view>
+    <view class=' flexBox'>
+      <view class='tag '>
+        店铺Logo
+      </view>
+      <view class='content'>
+        <image src='{{storelogo }}' bindtap='choseLogo'></image>
+        <text class='iconfont icon-right'></text>
+      </view>
+    </view>
+  </view>
+  <view class='graySeparate'></view>
+  <view class='infos '>
+    <view class=' flexBox'>
+      <view class='tag'>
+        是否显示店名和Logo
+      </view>
+      <view class='content '>
+        <switch checked="{{wxUSer.switch}}" bindchange="switchChange" />
+      </view>
+    </view>
+  </view>
+</view>
+<view class='page' wx:if="{{choseTab=='order'}}">
+  <view wx:if='{{rebateOrders.length==0}}' class='emptyList'>暂无订单</view>
+  <view wx:if='{{rebateOrders.length>0}}' class='order infos' wx:for="{{rebateOrders}}" wx:key="">
+    <view class='header '>
+      <view class='tag'>
+        订单号:{{item.out_trade_no||"暂无" }}
+      </view>
+      <view class='tag'>
+        下单时间:{{item.created||"暂无" }}
+      </view>
+      <!-- <view class='content '>
+        下单时间:{{item.created }}
+      </view> -->
+    </view>
+    <view class='goodsInfo flexBox'>
+      <view class='img'>
+        <image src='{{item.act.pics[0]?imageUrl+item.act.pics[0]:imgDef}}'></image>
+      </view>
+      <view class='title '>
+        {{item.act.city?"["+item.act.city+"]":""}}{{item.act.title}}
+      </view>
+    </view>
+    <view class='orderInfo flexBox'>
+      <view class='tag'>
+        价格
+      </view>
+      <view class='content money'>
+        ￥{{(item.amount||1)*item.act.price}}
+      </view>
+    </view>
+    <view class='orderInfo flexBox'>
+      <view class='tag'>
+        购买人
+      </view>
+      <view class='content '>
+        {{item.name}}
+      </view>
+    </view>
+    <view class='orderInfo flexBox'>
+      <view class='tag'>
+        购买人手机号
+      </view>
+      <view class='content '>
+        {{item.phone}}
+      </view>
+    </view>
+    <view class='orderInfo flexBox'>
+      <view class='tag'>
+        获得佣金
+      </view>
+      <view class='content money'>
+        ￥{{item.brokerage}}
+      </view>
+    </view>
+  </view>
+</view>
+<view class='page getCash' wx:if="{{choseTab=='withdraw'}}" >
+  <view class='title flexBox '>
+    <view class='content canWithdraw'>
+      可提现金额:
+      <text class='money'>￥{{wxUSer.balance }}</text>
+    </view>
+    <view class=' getCashHistory'>
+      <navigator class='gotoWithdrawHistory' url='../../mineDetail/getCashHistory/getCashHistory' class=''>提现记录</navigator>
+    </view>
+  </view>
+    <view class='getCashSetting infos' >
+      <view class=' flexBox'>
+        <view class='tag'>
+          提现金额(￥)
+        </view>
+        <view class='content '>
+          <input type='number' focus id='amount' placeholder='请填写提现金额' bindinput='listenInput'></input>
+        </view>
+      </view>
+      <view class='discribe flexBox'>
+        <view class='tag'>
+          备注信息
+        </view>
+        <view class='content '>
+          <!-- <input placeholder=''></input> -->
+          <textarea id='remark' value='' placeholder='请填写需要提现的信息(如账户等)' bindinput='listenInput'></textarea>
+        </view>
+      </view>
+    </view>
+
+  <view class='title flexBox tips'>
+    <view class='tag ' style='font-weight:500'>提示:</view>
+    <view class='content'> {{tips}}<text>默认是微信钱包</text></view>
+  </view>
+  <view class='infos ' id='submitGetCash' bindtap='submitGetCash'>提交</view>
+</view>
+<view class='bottomBtns'>
+  <view class=''>
+    <!-- <navigator url='' id='mine' bindtap='choseTab'> -->
+    <view class='tab' id='mine' bindtap='choseTab'>
+      <image src='../../../img/mine/mine{{choseTab=="mine"?"_active":""}}.png'></image>
+      <view class='{{choseTab=="mine"?"tab_active":""}}'>我的</view>
+    </view>
+    <!-- </navigator> -->
+  </view>
+  <view class=''>
+    <!-- <navigator url='' id='order' bindtap='choseTab'> -->
+    <view class='tab' id='order' bindtap='choseTab'>
+      <image src='../../../img/mine/order{{choseTab=="order"?"_active":""}}.png'></image>
+      <view class='{{choseTab=="order"?"tab_active":""}}'>订单</view>
+    </view>
+
+    <!-- </navigator> -->
+  </view>
+  <view class=''>
+    <!-- <navigator url='' id='cash' bindtap='choseTab'> -->
+    <view class='tab' id='withdraw' bindtap='choseTab'>
+      <image src='../../../img/mine/withdraw{{choseTab=="withdraw"?"_active":""}}.png'></image>
+      <view class='{{choseTab=="withdraw"?"tab_active":""}}'>申请提现</view>
+    </view>
+    <!-- < </navigator> -->
+  </view>
+</view>
+
+<image id='imgTemp' src='{{tempFilePath}}' bindload="imageLoad"></image>
+<canvas id='attendCanvasId' canvas-id='attendCanvasId'></canvas>

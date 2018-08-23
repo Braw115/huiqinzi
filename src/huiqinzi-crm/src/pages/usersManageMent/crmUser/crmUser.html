@@ -1,0 +1,147 @@
+<link rel="stylesheet" href="pages/usersManageMent/crmUser/crmUser.css">
+<div class="box container-fluid box-header-line">
+    <div class="box-header" style="padding-bottom: 20px; padding-top: 30px; border-bottom: 2px solid #ebebeb; margin-bottom: 20px;">
+        <span style="font-size:24px">CRM用户管理</span>
+        <button class="btn btn-primary pull-right bankadmin subadmin clerk businessmen" onclick="openAdd()">添加CRM用户</button>
+    </div>
+    <table id="tableLi" class="table table-bordered table-style" width="100%">
+        <thead>
+            <tr>
+                <th>用户名</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>地址</th>
+                <th>权限</th>
+                <th>状态</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="ul-add">
+
+        </tbody>
+    </table>
+
+
+
+</div>
+
+<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">创建CRM用户 </h4>
+            </div>
+            <div class="modal-body editComImgCton">
+                <form id="form1" class="form-horizontal">
+
+                    <div class="form-group checkType2">
+                        <label class="col-md-3 col-sm-3 control-label">账户名</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="username" class="form-control editTitle" verify="username" placeholder="请输入账户名">
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入账户名"></i>
+                        </div>
+                    </div>
+                    <div class="form-group checkType2">
+                        <label class="col-md-3 col-sm-3 control-label">密码</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="password" class="form-control editTitle" verify="password" placeholder="请输入密码">
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入密码"></i>
+                        </div>
+                    </div>
+                    <div class="form-group checkType2">
+                        <label class="col-md-3 col-sm-3 control-label">姓名</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="realname" class="form-control editTitle" verify="required" placeholder="请输入姓名">
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入姓名"></i>
+                        </div>
+                    </div>
+                    <div class="form-group checkType2">
+                        <label class="col-md-3 col-sm-3 control-label">电话</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="phone" class="form-control editTitle" verify="mobile" placeholder="请输入电话">
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入电话"></i>
+                        </div>
+                    </div>
+                    <div class="form-group checkType2">
+                        <label class="col-md-3 col-sm-3 control-label">邮箱</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="email" class="form-control editTitle" verify="email" placeholder="请输入邮箱">
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入邮箱"></i>
+                        </div>
+                    </div>
+                    <div class="form-group checkType2">
+                        <label class="col-md-3 col-sm-3 control-label">地址</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="address" class="form-control editTitle" verify="required" placeholder="请输入商地址">
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入地址"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">状态</label>
+                        <div class="col-md-6 col-sm-6">
+                            <select class="form-control" id="state" verify="required">
+                                <option value="on">开</option>
+                                <option value="off">关</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请选择用户状态"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 col-sm-3 control-label">权限</label>
+                        <div class="col-md-6 col-sm-6">
+                            <select class="form-control" id="perm" verify="required">
+                                <option class="admin " value="root">Root</option>
+                                <option  value="admin">Admin</option>
+                                <option class="" value="business">Business</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请选择用户权限"></i>
+                        </div>
+                    </div>
+                    <div class="form-group checkType2">
+                        <label class="col-md-3 col-sm-3 control-label">描述</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="description" class="form-control editTitle" placeholder="请输入描述">
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入描述"></i>
+                        </div>
+                    </div>
+                    <div class="form-group checkType2">
+                        <label class="col-md-3 col-sm-3 control-label">备注</label>
+                        <div class="col-md-6 col-sm-6">
+                            <input type="text" id="remark" class="form-control editTitle" placeholder="请输入备注">
+                        </div>
+                        <div class="col-md-3 col-sm-3 tip-icon">
+                            <i class="fa fa fa-exclamation-circle" data-toggle="tooltip" data-placement="bottom" title="请输入备注"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="saveUser()">确定</button>
+                </div>
+                <div class="tip"></div>
+            </div>
+        </div>
+    </div>
+</div>

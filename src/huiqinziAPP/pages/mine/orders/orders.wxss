@@ -1,0 +1,85 @@
+/* pages/mine/orders/orders.wxss */
+
+.type {
+  width: 20%;
+  background-color: #fff;
+}
+
+page {
+   background-color: #f4f4f4; 
+  font-size: 10pt;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+.separate{
+  height: 30rpx;
+}
+
+.page {
+  width: 100%;
+  overflow: hidden;
+}
+
+.orders {
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+
+.orderItem {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0;
+}
+
+.orderItem:not(:first-child) {
+  border-top: 1px solid #dcdcdc;
+}
+
+.orderItem  {
+  flex-direction: row;
+}
+
+.orderItem image.img  {
+  width: 60pt;
+  height: 60pt;
+}
+
+.orderItem .orderInfos {
+  flex: 1;
+  padding: 0 30rpx;
+  color: #999;
+  position: relative;
+}
+
+.orderItem .orderInfos .title {
+  font-weight: 900;
+  color: #000;
+}
+
+.orderItem .orderStatus {
+  float: right;
+}
+.orderItem .operations{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: right;
+  width:100%;
+}
+.orderItem .operations>view {
+  display: inline-block;
+  background-color: #FF4747;
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+
+.waitUse {
+  color: #41b741;
+}
+
+.waitPay {
+  color: #FF4747;
+}

@@ -1,0 +1,58 @@
+<wxs module="activityOption">
+  module.exports = {
+    imageUrl: 'https://huiqinzi.aefcm.com/huiqinzi/image/'
+  }
+</wxs>
+<!-- paradise/paradise -->
+<template name="goodsListHaveBtn">
+  <view class='goodsList'>
+    <navigator class='goodsListItem' bindtap='saveCurrentActivity'  wx:for="{{activities}}" data-idx='{{index}}' wx:key="" url='../../goodsDetail/groupBuy/groupBuy?goodsuuid={{item.uuid}}'>
+      <image src='{{activityOption.imageUrl+item.img}}'></image>
+      <view class='infos'>
+        <view class='title'>{{item.title}}</view>
+        <view class='tags'>{{item.tags}}</view>
+        <view class='priceAndTime'>
+          <view  class='surplusTime'>
+            距结束仅剩
+            <span class='leftTime'>{{item.leftTime.days}}</span> 天
+            <span class='leftTime'>{{item.leftTime.hours}}</span> :
+            <span class='leftTime'>{{item.leftTime.minutes}}</span> :
+            <span class='leftTime'>{{item.leftTime.seconds}}</span>
+          </view>
+          <view class='price'>
+            <view class='rushPrice'>
+              <span class='priceC'>￥</span>
+              <span class='realPrice'>{{item.price}}</span>
+              <span class='originalPrice'>￥{{item.specialprice}}</span>
+              <span class='selled'>已售:{{item.sold}}</span>
+            </view>
+            <view class='gotoBuyBtn'>{{item.amount?"去参团":"马上抢"}}</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+
+<template name="goodsListNoBtn">
+  <view class='goodsList'>
+    <navigator class='goodsListItem' wx:for="{{activityList}}" bindtap='saveCurrentActivity' data-idx='{{index}}' wx:key="" url="../../goodsDetail/groupBuy/groupBuy?goodsuuid={{item.uuid}}">
+      <image src='{{activityOption.imageUrl+item.img}}'></image>
+      <view class='infos'>
+        <view class='title'>{{item.title}}</view>
+        <view class='tags'>{{item.tags}}</view>
+        <view class='priceAndTime'>
+          <view class='price'>
+            <view class='rushPrice'>
+              <span class='priceC'>￥</span>
+              <span class='realPrice'>{{item.price}}</span>
+              <span class='originalPrice'>￥{{item.specialprice}}</span>
+            </view>
+            <view class='selled'>已售:{{item.sold}}</view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</template>

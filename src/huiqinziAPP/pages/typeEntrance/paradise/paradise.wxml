@@ -1,0 +1,13 @@
+<!--pages/typeEntrance/paradise/paradise.wxml-->
+<import src="../../common/goodsList.wxml" />
+
+<view class='page'>
+  <scroll-view class="actionTypes types" scroll-x="true" bindscroll="scroll" style="width: 100%" bindscrolltolower="gotoFirstType" bindscroll="typeScroll" scroll-into-view="{{toType}}">
+    <view wx:for="{{subCatogerys}}" id="{{item.uuid}}" class='type {{activeSubCatogery==item.uuid?"active":""}}' bindtap='choseActionType' wx:key="">
+      {{item.name}}
+      <view wx:if='{{activeSubCatogery==item.uuid}}' class='activeTypeBorder'></view>
+    </view>
+  </scroll-view>
+  <template is="goodsListNoBtn" data="{{activityList}}" />
+  <view wx:if='{{activityList.length==0}}' class='emptyList'>商品已被抢空！</view>
+</view>

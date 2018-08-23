@@ -1,0 +1,63 @@
+<!--pages/mineDetail/address/address.wxml-->
+<view class='box'>
+  <view class='flexBox'>
+    <view class='tag'>收货人</view>
+    <view class='content'>
+      <input id='contact' placeholder='姓名' value='{{contact}}' bindinput='listenInput'></input>
+    </view>
+  </view>
+  <view class='flexBox'>
+    <view class='tag'>联系方式</view>
+    <view class='content'>
+      <input type='number' id='phone' placeholder='手机号' value='{{phone}}' bindinput='listenInput'></input>
+    </view>
+  </view>
+  <view class='flexBox' bindtap='showAddrChose'>
+    <view class='tagAddr'>
+      <input disabled class='username' placeholder='省、市、区/县' bindfocus='showAddrChose' value='{{addrInfo}}'></input>
+    </view>
+    <view class='addrGoto'>
+      <image mode='aspectFit' src='../../../img/goodsBuy/goto.png'></image>
+    </view>
+  </view>
+  <view class='flexBox'>
+    <view class='tag'>详细地址</view>
+    <view class='content'>
+      <input id='detailAddr' class='' placeholder='街道地址' value='{{detailAddr}}' bindinput='listenInput'></input>
+    </view>
+  </view>
+  <view class='flexBox'>
+    <view class='isDefault flexBox' style='justify-content:flex-start;'>
+      <text class='iconfont icon-circle {{isDefault=="yes"?"active":""}}' bindtap='choseDef'></text>
+      <label>设为默认</label>
+    </view>
+  </view>
+</view>
+
+<view id="addrChose" wx:if="{{showAddrChose}}">
+  <view class='mask' bindtap='showAddrChose'></view>
+  <view class=' showAddrBtns'>
+    <!-- <view style='color:red'>取消</view>
+    <view bindtap='showAddrChose'>确定</view> -->
+  </view>
+  <view class='flexBox'>
+    <view>{{province}}</view>
+    <view>{{city}}</view>
+    <view>{{district}}</view>
+    <view bindtap='showAddrChose' style='color:green;'>确定</view>
+  </view>
+  <picker-view indicator-style="height: 40px;" value="{{value}}" bindchange="choseAddr">
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{cities}}" wx:key="">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{districts}}" wx:key="">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+<view class='bottomBtns'>
+  <view class='submitAddAddr Recommend' bindtap='submitAddAddr'>保存地址</view>
+</view>

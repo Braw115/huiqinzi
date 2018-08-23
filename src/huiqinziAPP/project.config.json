@@ -1,0 +1,92 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.2",
+	"appid": "wx9abcee36700ed2a0",
+	"projectname": "huiqinzi",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "分销登录中心",
+					"pathName": "pages/mine/distributionLogin/distributionLogin",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的分销中心",
+					"pathName": "pages/mine/minedistribution/minedistribution",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": " 我的",
+					"pathName": "pages/mine/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/mine/withdraw/withdraw",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "原分销",
+					"pathName": "pages/mine/distribution/distribution",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/mine/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分享邀请",
+					"pathName": "pages/mine/share/share",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "前订单",
+					"pathName": "pages/mine/orders/orders",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "分销中心",
+					"pathName": "pages/mine/distributioncenter/distributioncenter",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,51 @@
+.saveGoods {
+    padding: 5px 0
+}
+
+.image-wrapper-middle {
+    width: 160px;
+    height: 120px;
+    background-color: #f2f2f2;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.imageTitle{
+    padding-bottom: 5px;
+}
+
+.image-wrapper-middle .image {
+    position: relative;
+    font-size: 50px;
+    color: #ccc;
+    margin: 15% 32%;
+}
+
+.cover-middle {
+    position: relative;
+    width: 160px;
+    height: 120px;
+    margin-top: -98px;
+    background-size: 100% 100%;
+}
+
+.trash-icon-middle {
+    position: relative;
+    display: block;
+    width: 160px;
+    height: 120px;
+    margin-top: -120px;
+}
+
+.trash-icon-middle .fa-trash-o {
+    font-size: 50px;
+    position: relative;
+    color: white;
+    margin-left: 38%;
+    margin-top: 20%;
+}
+
+.goodsDetailArea {
+    padding: 5px 10px;
+}

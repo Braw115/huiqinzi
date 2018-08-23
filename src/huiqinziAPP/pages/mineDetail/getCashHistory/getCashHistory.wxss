@@ -1,0 +1,29 @@
+/* pages/mineDetail/getCashHistory/getCashHistory.wxss */
+
+page {
+  background-color: #f4f4f4;
+  padding: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 10pt;
+}
+
+.history {
+  padding: 0 20rpx;
+  background-color: #fff;
+  border-radius: 5rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+
+.history>view {
+  padding: 10rpx 0;
+}
+
+.content {
+  text-align: right;
+}
+
+.money {
+  color: #FF4747;
+}

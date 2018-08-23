@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/typeEntrance/rushBuy/rushBuy",
+    "pages/typeEntrance/shopping/shopping",
+    "pages/typeEntrance/groupBuy/groupBuy",
+    "pages/typeEntrance/paradise/paradise",
+    "pages/mine/orders/orders",
+    "pages/mine/receiveAddress/receiveAddress",
+    "pages/mine/distribution/distribution",
+    "pages/search/searching/searching",
+    "pages/search/searchResult/searchResult",
+    "pages/goodsDetail/groupBuy/groupBuy",
+    "pages/goodsDetail/paradise/paradise",
+    "pages/goodsDetail/shopping/shopping",
+    "pages/goodsBuy/shopping/shopping",
+    "pages/mineDetail/address/address",
+    "pages/goodsBuy/paradise/paradise",
+    "pages/mineDetail/changeShopName/changeShopName",
+    "pages/mineDetail/getCashHistory/getCashHistory",
+    "pages/mineDetail/logisticsInfo/logisticsInfo",
+    "pages/mineDetail/orderDetail/orderDetail",
+    "pages/typeEntrance/hotSell/hotSell",
+    "pages/mine/distributionLogin/distributionLogin",
+    "pages/mine/minedistribution/minedistribution",
+    "pages/mine/mine/mine",
+    "pages/mine/withdraw/withdraw",
+    "pages/mine/order/order",
+    "pages/mine/share/share",
+    "pages/mine/distributioncenter/distributioncenter"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "惠亲子",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  }
+}
